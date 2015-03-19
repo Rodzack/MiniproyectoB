@@ -78,7 +78,7 @@ public class Servlet extends HttpServlet {
             
             ResultSet res;
             Query query;
-             Beans bean;
+             
             
             
             out.println("<!DOCTYPE html>");
@@ -87,8 +87,20 @@ public class Servlet extends HttpServlet {
             out.println("<title>Servlet Servlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println(request.getParameter("saldo"));
             
+            //Arreglos (Matrices)
+            String aMouse[][];
+            String aPantalla[][];
+            String aboard[][];
+            String aPrecesador[][];
+            String aGrafica[][];
+            String aFuentePoder[][];
+            String aTeclado[][];
+            String aCooler[][];
+            String aDiscoDuro[][];
+            String aGabinete[][];
+          
+            ///calculo de total por parte
             int mouse = Integer.parseInt(request.getParameter("saldo")) * 2 / 100;
             int pantalla = Integer.parseInt(request.getParameter("saldo")) * 10 / 100;
             int board = Integer.parseInt(request.getParameter("saldo")) * 12 / 100;
@@ -99,20 +111,85 @@ public class Servlet extends HttpServlet {
             int cooler = Integer.parseInt(request.getParameter("saldo")) * 3 / 100;
             int dicoDuro = Integer.parseInt(request.getParameter("saldo")) * 6 / 100;
             int gabinete = Integer.parseInt(request.getParameter("saldo")) * 13 / 100;
+               out.println(board);     
+            //Consultas por  parte (Mouse)        
             query = new Query();
             res = query.mouse(mouse);
-         out.println("<table>");
+            int m=0;
             while (res.next()) {
-                out.println("<tr>");
-                out.println("<td>" + res.getString("dp.idProducto") + "</td>");
-                out.println("<td>" + res.getString("p.nombre") + "</td>");
-                out.println("<td>" + res.getString("tp.tipoProducto") + "</td>");
-                out.println("<td>" + res.getString("dp.precio") + "</td>");
-                out.println("</tr>");
-            }
+                    m++;
+                }
+            aMouse = new String [3][m];
+            res = query.mouse(mouse);
+            int jm=0;
+            while (res.next()) {
+                    
+                    aMouse[0][jm] = res.getString("p.nombre");
+                    aMouse[1][jm] = res.getString("tp.tipoProducto");
+                    aMouse[2][jm] = res.getString("dp.precio");
+                    out.println(aMouse[0][jm] + " | " + aMouse[1][jm] + " | " + aMouse[2][jm] + "<br>");
+
+                    jm++;
+                }
+            
+            //Consultas por  parte (Pantalla)        
+            query = new Query();
+            res = query.pantalla(pantalla);
+            int p=0;
+            while (res.next()) {
+                    p++;
+                }
+            aPantalla = new String [3][p];
+            res = query.pantalla(pantalla);
+            int jp=0;
+            while (res.next()) {
+                    
+                    aPantalla[0][jp] = res.getString("p.nombre");
+                    aPantalla[1][jp] = res.getString("tp.tipoProducto");
+                    aPantalla[2][jp] = res.getString("dp.precio");
+                    out.println(aPantalla[0][jp] + " | " + aPantalla[1][jp] + " | " + aPantalla[2][jp] + "<br>");
+
+                    jp++;
+                }
+            //Consultas por  parte (Board)        
+            query = new Query();
+            res = query.board(board);
+            int b=0;
+            while (res.next()) {
+                   b++;
+                }
+            aboard = new String [3][b];
+            res = query.board(board);
+            int jb=0;
+            while (res.next()) {
+                    
+                    aboard[0][jb] = res.getString("p.nombre");
+                    aboard[1][jb] = res.getString("tp.tipoProducto");
+                    aboard[2][jb] = res.getString("dp.precio");
+                    out.println(aboard[0][jb] + " | " + aboard[1][jb] + " | " + aboard[2][jb] + "<br>");
+
+                    jp++;
+                }
             
             
-            out.println("</table>");
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
             
             

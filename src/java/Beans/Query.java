@@ -23,7 +23,7 @@ public class Query extends cnx {
                     + " join descripcion d on dp.idDescripcion=d.idDescripcion"
                     + " join marca m on dp.idMarca=m.idMarca"
                     + " join producto p on dp.idProducto=p.idProducto"
-                    + " join tipoproducto tp on p.idTipoproducto = tp.IdTipoProducto where dp.precio <="+entrada+"  and tp.tipoProducto = 'teclado' order by dp.idProducto");
+                    + " join tipoproducto tp on p.idTipoproducto = tp.IdTipoProducto where dp.precio <="+entrada+"  and tp.tipoProducto = 'teclado' order by dp.precio");
             System.out.println(bean.getRam());
             return rs;
         }catch(Exception ex){
