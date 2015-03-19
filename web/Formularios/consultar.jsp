@@ -126,7 +126,6 @@
                     teclados[1][j] = rs.getString("tp.tipoProducto");
                     teclados[2][j] = rs.getString("dp.precio");
                     out.println(teclados[0][j] + " | " + teclados[1][j] + " | " + teclados[2][j] + "<br>");
-
                     j++;
                 }
             
