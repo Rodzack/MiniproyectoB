@@ -89,29 +89,30 @@ public class Servlet extends HttpServlet {
             out.println("<body>");
             out.println(request.getParameter("saldo"));
             
-            double mouse = Double.parseDouble(request.getParameter("saldo")) * 2 / 100;
-            double pantalla = Double.parseDouble(request.getParameter("saldo")) * 10 / 100;
-            double board = Double.parseDouble(request.getParameter("saldo")) * 12 / 100;
-            double procesador = Double.parseDouble(request.getParameter("saldo")) * 19 / 100;
-            double grafica = Double.parseDouble(request.getParameter("saldo")) * 19 / 100;
-            double fuentePoder = Double.parseDouble(request.getParameter("saldo")) * 8 / 100;
+            int mouse = Integer.parseInt(request.getParameter("saldo")) * 2 / 100;
+            int pantalla = Integer.parseInt(request.getParameter("saldo")) * 10 / 100;
+            int board = Integer.parseInt(request.getParameter("saldo")) * 12 / 100;
+            int procesador = Integer.parseInt(request.getParameter("saldo")) * 19 / 100;
+            int grafica = Integer.parseInt(request.getParameter("saldo")) * 19 / 100;
+            int fuentePoder = Integer.parseInt(request.getParameter("saldo")) * 8 / 100;
             int teclado = Integer.parseInt(request.getParameter("saldo")) * 2 / 100;
-            double cooler = Double.parseDouble(request.getParameter("saldo")) * 3 / 100;
-            double dicoDuro = Double.parseDouble(request.getParameter("saldo")) * 6 / 100;
-            double gabinete = Double.parseDouble(request.getParameter("saldo")) * 13 / 100;
+            int cooler = Integer.parseInt(request.getParameter("saldo")) * 3 / 100;
+            int dicoDuro = Integer.parseInt(request.getParameter("saldo")) * 6 / 100;
+            int gabinete = Integer.parseInt(request.getParameter("saldo")) * 13 / 100;
             query = new Query();
-            res = query.teclado(teclado);
-         
+            res = query.mouse(mouse);
+         out.println("<table>");
+            while (res.next()) {
+                out.println("<tr>");
+                out.println("<td>" + res.getString("dp.idProducto") + "</td>");
+                out.println("<td>" + res.getString("p.nombre") + "</td>");
+                out.println("<td>" + res.getString("tp.tipoProducto") + "</td>");
+                out.println("<td>" + res.getString("dp.precio") + "</td>");
+                out.println("</tr>");
+            }
             
             
-            
-            
-            
-            
-            
-            
-            
-            
+            out.println("</table>");
             
             
             
