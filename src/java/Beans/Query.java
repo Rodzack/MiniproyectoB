@@ -13,6 +13,7 @@ public class Query extends cnx {
     Beans bean = new Beans();
     int precio;
     int pr = bean.getTeclado();
+    
     public ResultSet teclado(int entrada)throws Exception{
         
         try{

@@ -89,34 +89,31 @@ public class Servlet extends HttpServlet {
             out.println("<body>");
             out.println(request.getParameter("saldo"));
             
-//            double mouse = Double.parseDouble(request.getParameter("saldo")) * 2 / 100;
-//            double teclado = Double.parseDouble(request.getParameter("saldo")) * 2 / 100;
-//            bean.setTeclado(teclado);
-//            double pantalla = Double.parseDouble(request.getParameter("saldo")) * 10 / 100;
-//            double board = Double.parseDouble(request.getParameter("saldo")) * 12 / 100;
-//            double procesador = Double.parseDouble(request.getParameter("saldo")) * 19 / 100;
-//            double grafica = Double.parseDouble(request.getParameter("saldo")) * 19 / 100;
-//            double fuentePoder = Double.parseDouble(request.getParameter("saldo")) * 8 / 100;
+            double mouse = Double.parseDouble(request.getParameter("saldo")) * 2 / 100;
+            double pantalla = Double.parseDouble(request.getParameter("saldo")) * 10 / 100;
+            double board = Double.parseDouble(request.getParameter("saldo")) * 12 / 100;
+            double procesador = Double.parseDouble(request.getParameter("saldo")) * 19 / 100;
+            double grafica = Double.parseDouble(request.getParameter("saldo")) * 19 / 100;
+            double fuentePoder = Double.parseDouble(request.getParameter("saldo")) * 8 / 100;
             int teclado = Integer.parseInt(request.getParameter("saldo")) * 2 / 100;
-            bean = new Beans();
-            bean.setTeclado(teclado);
-            out.println(teclado);
-//            double cooler = Double.parseDouble(request.getParameter("saldo")) * 3 / 100;
-//            double dicoDuro = Double.parseDouble(request.getParameter("saldo")) * 6 / 100;
-//            double gabinete = Double.parseDouble(request.getParameter("saldo")) * 13 / 100;
+            double cooler = Double.parseDouble(request.getParameter("saldo")) * 3 / 100;
+            double dicoDuro = Double.parseDouble(request.getParameter("saldo")) * 6 / 100;
+            double gabinete = Double.parseDouble(request.getParameter("saldo")) * 13 / 100;
             query = new Query();
             res = query.teclado(teclado);
-            out.println("<table>");
-           while (res.next()) {
-               out.println("<table>");
-                out.println("<tr>");
-                out.println("<td>" + res.getString("dp.idProducto") + "</td>");
-                out.println("<td>" + res.getString("p.nombre") + "</td>");
-                out.println("<td>" + res.getString("tp.tipoProducto") + "</td>");
-                out.println("<td>" + res.getString("dp.precio") + "</td>");
-                out.println("</tr>");
-            }
-            out.println("</table>");
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
 
             out.println("<h1>Servlet Servlet at " + request.getContextPath() + "</h1>");
