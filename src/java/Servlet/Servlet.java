@@ -77,8 +77,8 @@ public class Servlet extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             
             ResultSet res;
-            Query query = new Query();
-             Beans bean = new Beans();
+            Query query;
+             Beans bean;
             
             
             out.println("<!DOCTYPE html>");
@@ -97,28 +97,28 @@ public class Servlet extends HttpServlet {
 //            double procesador = Double.parseDouble(request.getParameter("saldo")) * 19 / 100;
 //            double grafica = Double.parseDouble(request.getParameter("saldo")) * 19 / 100;
 //            double fuentePoder = Double.parseDouble(request.getParameter("saldo")) * 8 / 100;
-            double ram = Double.parseDouble(request.getParameter("saldo")) * 9 / 100;
-            bean.setRam(ram);
+            int teclado = Integer.parseInt(request.getParameter("saldo")) * 2 / 100;
+            bean = new Beans();
+            bean.setTeclado(teclado);
+            out.println(teclado);
 //            double cooler = Double.parseDouble(request.getParameter("saldo")) * 3 / 100;
 //            double dicoDuro = Double.parseDouble(request.getParameter("saldo")) * 6 / 100;
 //            double gabinete = Double.parseDouble(request.getParameter("saldo")) * 13 / 100;
-            
+            query = new Query();
             res = query.teclado();
-            
-            while (res.next()) {
-                
-                out.println(res.getString("dp.idProducto"));
-                out.println(res.getString("p.nombre"));
-                out.println(res.getString("tp.tipoProducto"));
-                out.println(res.getString("dp.precio"));
-                
+            out.println("<table>");
+           while (res.next()) {
+               out.println("<table>");
+                out.println("<tr>");
+                out.println("<td>" + res.getString("dp.idProducto") + "</td>");
+                out.println("<td>" + res.getString("p.nombre") + "</td>");
+                out.println("<td>" + res.getString("tp.tipoProducto") + "</td>");
+                out.println("<td>" + res.getString("dp.precio") + "</td>");
+                out.println("</tr>");
             }
+            out.println("</table>");
             
-            
-            
-         
-            
-            
+
             out.println("<h1>Servlet Servlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");

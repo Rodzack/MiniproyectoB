@@ -12,7 +12,7 @@ package Beans;
 public class Beans {
     
     double mouse;
-            double teclado ;
+            int teclado ;
             double pantalla ;
             double board ;
             double procesador ;
@@ -31,11 +31,11 @@ public class Beans {
         this.mouse = mouse;
     }
 
-    public double getTeclado() {
+    public int getTeclado() {
         return teclado;
     }
 
-    public void setTeclado(double teclado) {
+    public void setTeclado(int teclado) {
         this.teclado = teclado;
     }
 
