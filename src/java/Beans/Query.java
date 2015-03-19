@@ -13,7 +13,7 @@ public class Query extends cnx {
     Beans bean = new Beans();
     int precio;
     int pr = bean.getTeclado();
-    public ResultSet teclado()throws Exception{
+    public ResultSet teclado(int entrada)throws Exception{
         
         try{
             getSql();
@@ -22,7 +22,7 @@ public class Query extends cnx {
                     + " join descripcion d on dp.idDescripcion=d.idDescripcion"
                     + " join marca m on dp.idMarca=m.idMarca"
                     + " join producto p on dp.idProducto=p.idProducto"
-                    + " join tipoproducto tp on p.idTipoproducto = tp.IdTipoProducto where dp.precio <="+bean.getTeclado()+"  and tp.tipoProducto = 'teclado' order by dp.idProducto");
+                    + " join tipoproducto tp on p.idTipoproducto = tp.IdTipoProducto where dp.precio <="+entrada+"  and tp.tipoProducto = 'teclado' order by dp.idProducto");
             System.out.println(bean.getRam());
             return rs;
         }catch(Exception ex){

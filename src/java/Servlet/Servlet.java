@@ -105,7 +105,7 @@ public class Servlet extends HttpServlet {
 //            double dicoDuro = Double.parseDouble(request.getParameter("saldo")) * 6 / 100;
 //            double gabinete = Double.parseDouble(request.getParameter("saldo")) * 13 / 100;
             query = new Query();
-            res = query.teclado();
+            res = query.teclado(teclado);
             out.println("<table>");
            while (res.next()) {
                out.println("<table>");
