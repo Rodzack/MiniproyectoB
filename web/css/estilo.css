@@ -77,5 +77,6 @@ small{
     background-size: 100%;
     color:white;
     position: absolute;
+    text-shadow: 1px 3px 3px black;
     
 }
