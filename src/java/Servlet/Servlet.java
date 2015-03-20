@@ -171,6 +171,44 @@ public class Servlet extends HttpServlet {
                     jp++;
                 }
             
+            //Consultas por  parte (Precesador)        
+            query = new Query();
+            res = query.procesador(procesador);
+            int pc=0;
+            while (res.next()) {
+                   pc++;
+                }
+            aPrecesador = new String [3][pc];
+            res = query.procesador(procesador);
+            int jpc=0;
+            while (res.next()) {
+                    
+                    aPrecesador[0][jpc] = res.getString("p.nombre");
+                    aPrecesador[1][jpc] = res.getString("tp.tipoProducto");
+                    aPrecesador[2][jpc] = res.getString("dp.precio");
+                    out.println(aPrecesador[0][jpc] + " | " + aPrecesador[1][jpc] + " | " + aPrecesador[2][jpc] + "<br>");
+
+                    jpc++;
+                }
+            //Consultas por  parte (Grafica)        
+            query = new Query();
+            res = query.grafica(grafica);
+            int g=0;
+            while (res.next()) {
+                   g++;
+                }
+            aGrafica = new String [3][g];
+            res = query.grafica(grafica);
+            int jg=0;
+            while (res.next()) {
+                    
+                    aGrafica[0][jg] = res.getString("p.nombre");
+                    aGrafica[1][jg] = res.getString("tp.tipoProducto");
+                    aGrafica[2][jg] = res.getString("dp.precio");
+                    out.println(aGrafica[0][jg] + " | " + aGrafica[1][jg] + " | " + aGrafica[2][jg] + "<br>");
+
+                    jg++;
+                }
             
             
             
