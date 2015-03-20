@@ -18,7 +18,7 @@ public class Query extends cnx {
         
         try{
             getSql();
-            rs = sql.executeQuery("select dp.idProducto,p.nombre, m.nombreMarca,d.capacidad,d.compatibilidad,d.descripcionAdicional,d.tamanio,d.tecnologia,dp.precio,tp.tipoProducto"
+            rs = sql.executeQuery("select dp.idProducto,p.nombre, m.nombreMarca,d.capacidad,d.tipoDeConexion,d.compatibilidad,d.descripcionAdicional,d.tamanio,d.tecnologia,dp.precio,tp.tipoProducto"
                     + " from descripcionproducto dp"
                     + " join descripcion d on dp.idDescripcion=d.idDescripcion"
                     + " join marca m on dp.idMarca=m.idMarca"
@@ -35,7 +35,7 @@ public class Query extends cnx {
      public ResultSet mouse(int entrada)throws Exception{
         try{
             getSql();
-            rs = sql.executeQuery("select dp.idProducto,p.nombre, m.nombreMarca,d.capacidad,d.compatibilidad,d.descripcionAdicional,d.tamanio,d.tecnologia,dp.precio,tp.tipoProducto"
+            rs = sql.executeQuery("select dp.idProducto,p.nombre, m.nombreMarca,d.capacidad,d.compatibilidad,d.descripcionAdicional,d.tamanio,d.tipoDeConexion,d.tecnologia,dp.precio,tp.tipoProducto"
                     + " from descripcionproducto dp"
                     + " join descripcion d on dp.idDescripcion=d.idDescripcion"
                     + " join marca m on dp.idMarca=m.idMarca"
@@ -51,7 +51,7 @@ public class Query extends cnx {
     public ResultSet procesador(int entrada)throws Exception{
         try{
             getSql();
-            rs = sql.executeQuery("select dp.idProducto,p.nombre, m.nombreMarca,d.capacidad,d.compatibilidad,d.descripcionAdicional,d.tamanio,d.tecnologia,dp.precio,tp.tipoProducto"
+            rs = sql.executeQuery("select dp.idProducto,p.nombre, m.nombreMarca,d.velocidad,d.capacidad,d.compatibilidad,d.descripcionAdicional,d.tamanio,d.tecnologia,dp.precio,tp.tipoProducto"
                     + " from descripcionproducto dp"
                     + " join descripcion d on dp.idDescripcion=d.idDescripcion"
                     + " join marca m on dp.idMarca=m.idMarca"
@@ -83,6 +83,7 @@ public class Query extends cnx {
     public ResultSet cooler(int entrada)throws Exception{
         try{
             getSql();
+
                     rs = sql.executeQuery("select dp.idProducto,p.nombre, m.nombreMarca,d.capacidad,d.compatibilidad,d.descripcionAdicional,d.tamanio,d.tecnologia,dp.precio,tp.tipoProducto"
                     + " from descripcionproducto dp"
                     + " join descripcion d on dp.idDescripcion=d.idDescripcion"
@@ -147,7 +148,7 @@ public class Query extends cnx {
     public ResultSet fuentePoder(int entrada)throws Exception{
         try{
             getSql();
-            rs = sql.executeQuery("select dp.idProducto,p.nombre, m.nombreMarca,d.capacidad,d.compatibilidad,d.descripcionAdicional,d.tamanio,d.tecnologia,dp.precio,tp.tipoProducto"
+            rs = sql.executeQuery("select dp.idProducto,p.nombre, m.nombreMarca,d.capacidad,d.tipoDeConexion,d.compatibilidad,d.descripcionAdicional,d.tamanio,d.tecnologia,dp.precio,tp.tipoProducto"
                     + " from descripcionproducto dp"
                     + " join descripcion d on dp.idDescripcion=d.idDescripcion"
                     + " join marca m on dp.idMarca=m.idMarca"
