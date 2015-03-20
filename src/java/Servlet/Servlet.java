@@ -112,7 +112,7 @@ public class Servlet extends HttpServlet {
             int cooler = Integer.parseInt(request.getParameter("saldo")) * 6 / 100;
             int dicoDuro = Integer.parseInt(request.getParameter("saldo")) * 6 / 100;
             int gabinete = Integer.parseInt(request.getParameter("saldo")) * 9 / 100;
-            int ram = Integer.parseInt(request.getParameter("saldo")) * 9 / 100; 
+             int ram = Integer.parseInt(request.getParameter("saldo")) * 9 / 100; 
             
             //Consultas por  parte (Mouse)        
             query = new Query();
@@ -121,14 +121,16 @@ public class Servlet extends HttpServlet {
             while (res.next()) {
                     m++;
                 }
-            aMouse = new String [3][m];
+            aMouse = new String [4][m];
             res = query.mouse(mouse);
             int jm=0;
             while (res.next()) {
                     
                     aMouse[0][jm] = res.getString("p.nombre");
-                    aMouse[1][jm] = res.getString("tp.tipoProducto");
+                    aMouse[1][jm] = res.getString("d.tipoDeConexion");
                     aMouse[2][jm] = res.getString("dp.precio");
+                    aMouse[3][jm] = res.getString("d.descripcionAdicional");
+                    
                     out.println(aMouse[0][jm] + " | " + aMouse[1][jm] + " | " + aMouse[2][jm] + "<br>");
 
                     jm++;
@@ -180,14 +182,16 @@ public class Servlet extends HttpServlet {
             while (res.next()) {
                    pc++;
                 }
-            aPrecesador = new String [3][pc];
+            aPrecesador = new String [4][pc];
             res = query.procesador(procesador);
             int jpc=0;
             while (res.next()) {
                     
                     aPrecesador[0][jpc] = res.getString("p.nombre");
-                    aPrecesador[1][jpc] = res.getString("tp.tipoProducto");
+                    aPrecesador[1][jpc] = res.getString("d.velocidad");
                     aPrecesador[2][jpc] = res.getString("dp.precio");
+                    aPrecesador[3][jpc] = res.getString("d.tecnologia");
+                    
                     out.println(aPrecesador[0][jpc] + " | " + aPrecesador[1][jpc] + " | " + aPrecesador[2][jpc] + "<br>");
 
                     jpc++;
@@ -199,14 +203,16 @@ public class Servlet extends HttpServlet {
             while (res.next()) {
                    g++;
                 }
-            aGrafica = new String [3][g];
+            aGrafica = new String [4][g];
             res = query.grafica(grafica);
             int jg=0;
             while (res.next()) {
                     
                     aGrafica[0][jg] = res.getString("p.nombre");
-                    aGrafica[1][jg] = res.getString("tp.tipoProducto");
+                    aGrafica[1][jg] = res.getString("d.capacidad");
                     aGrafica[2][jg] = res.getString("dp.precio");
+                    aGrafica[3][jg] = res.getString("d.tecnologia");
+                    
                     out.println(aGrafica[0][jg] + " | " + aGrafica[1][jg] + " | " + aGrafica[2][jg] + "<br>");
 
                     jg++;
@@ -245,7 +251,7 @@ public class Servlet extends HttpServlet {
             while (res.next()) {
                     
                     aTeclado[0][jt] = res.getString("p.nombre");
-                    aTeclado[1][jt] = res.getString("tp.tipoProducto");
+                    aTeclado[1][jt] = res.getString("d.tipoDeConexion");
                     aTeclado[2][jt] = res.getString("dp.precio");
                     out.println(aTeclado[0][jt] + " | " + aTeclado[1][jt] + " | " + aTeclado[2][jt] + "<br>");
 
@@ -283,7 +289,7 @@ public class Servlet extends HttpServlet {
             while (res.next()) {
                     
                     aDiscoDuro[0][jd] = res.getString("p.nombre");
-                    aDiscoDuro[1][jd] = res.getString("tp.tipoProducto");
+                    aDiscoDuro[1][jd] = res.getString("d.capacidad");
                     aDiscoDuro[2][jd] = res.getString("dp.precio");
                     out.println(aDiscoDuro[0][jd] + " | " + aDiscoDuro[1][jd] + " | " + aDiscoDuro[2][jd] + "<br>");
 
@@ -316,14 +322,15 @@ public class Servlet extends HttpServlet {
             while (res.next()) {
                    r++;
                 }
-            aRam = new String [3][r];
+            aRam = new String [4][r];
             res = query.ram(ram);
             int jr=0;
             while (res.next()) {
                     
                     aRam[0][jr] = res.getString("p.nombre");
-                    aRam[1][jr] = res.getString("tp.tipoProducto");
+                    aRam[1][jr] = res.getString("d.capacidad");
                     aRam[2][jr] = res.getString("dp.precio");
+                    aRam[3][jr] = res.getString("d.tecnologia");
                     out.println(aRam[0][jr] + " | " + aRam[1][jr] + " | " + aRam[2][jr] + "<br>");
 
                     jr++;
@@ -344,13 +351,14 @@ public class Servlet extends HttpServlet {
         
             
             out.println("<tr>");
-            out.println("<td> Nombre"+aMouse [0][0]+"<br>Precio"+aMouse [2][0] +"</td>");
-            out.println("<td> Nombre"+aTeclado [0][0]+"<br>Precio"+aTeclado [2][0] +"</td>");
-            out.println("<td> Nombre"+aRam [0][0]+"<br>Precio"+aRam [2][0] +"</td>");
-            out.println("<td> Nombre"+aPrecesador [0][0]+"<br>Precio"+aPrecesador [2][0] +"</td>");
+            out.println("<td> Nombre"+aMouse [0][0]+"<br>Precio"+aMouse [2][0] +"<br> Tipo de conexion: "+aMouse [1][0] +"<br>Descripcion: "+aMouse [3][0] +"</td>");
+            out.println("<td> Nombre"+aTeclado [0][0]+"<br>Precio"+aTeclado [2][0] +"<br>Tipo de conexion: "+aTeclado [1][0] +"</td>");
+            out.println("<td> Nombre"+aRam [0][0]+"<br>Precio"+aRam [2][0] +"<br>Capacidad: "+aRam [1][0] +"<br>Tecnologia: "+aRam [3][0] +"</td>");
+            out.println("<td> Nombre"+aPrecesador [0][0]+"<br>Precio"+aPrecesador [2][0] +"<br>Velocidad: "+aPrecesador [1][0] +"<br>Tecnologia: "+aPrecesador [3][0] +
+                    "</td>");
             out.println("<td> Nombre"+aboard [0][0]+"<br>Precio"+aboard [2][0] +"</td>");
-            out.println("<td> Nombre"+aGrafica [0][0]+"<br>Precio"+aGrafica [2][0] +"</td>");
-            out.println("<td> Nombre"+aDiscoDuro [0][0]+"<br>Precio"+aDiscoDuro [2][0] +"</td>");
+            out.println("<td> Nombre"+aGrafica [0][0]+"<br>Precio"+aGrafica [2][0] +"<br>Capacidad: "+aGrafica [1][0] +"<br>Tecnologia: "+ aGrafica [3][0] +"</td>");
+            out.println("<td> Nombre"+aDiscoDuro [0][0]+"<br> Precio"+aDiscoDuro [2][0] +"<br>Capacidad: "+aDiscoDuro [1][0] +"</td>");
             out.println("<td> Nombre"+aPantalla [0][0]+"<br>Precio"+aPantalla [2][0] +"</td>");
             out.println("<td> Nombre"+aCooler [0][0]+"<br>Precio"+aCooler [2][0] +"</td>");
         // out.println("<td> Nombre"+aFuentePoder [0][0]+"<br>Precio"+aFuentePoder [2][0] +"</td>");
@@ -383,7 +391,6 @@ public class Servlet extends HttpServlet {
             
 
             out.println("<h1>Servlet Servlet at " + request.getContextPath() + "</h1>");
-            out.println("Algun cambio");
             out.println("</body>");
             out.println("</html>");
         } catch (Exception ex) {
