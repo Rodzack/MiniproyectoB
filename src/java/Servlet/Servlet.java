@@ -343,11 +343,12 @@ public class Servlet extends HttpServlet {
             out.println("<th>Procesador</th>");
             out.println("<th>Board</th>");
             out.println("<th>tarjeta de video</th>");
-            out.println("<th>Pantalla</th>");
             out.println("<th>Disco duro</th>");
-            out.println("<th>Cooler</th>");
+            out.println("<th>Pantalla</th>");
+            
             out.println("<th>Fuente de poder</th>");
             out.println("<th>Gabinete</th>");
+            out.println("<th>Cooler</th>");
         
             
             out.println("<tr>");
@@ -355,15 +356,17 @@ public class Servlet extends HttpServlet {
             out.println("<td> Nombre: "+aMouse [0][0]+"<br>Precio: "+aMouse [2][0] +"<br> Tipo de conexion: "+aMouse [1][0] +"<br>Descripcion: "+aMouse [3][0] +"</td>");
             out.println("<td> Nombre: "+aTeclado [0][0]+"<br>Precio: "+aTeclado [2][0] +"<br>Tipo de conexion: "+aTeclado [1][0] +"</td>");
             out.println("<td> Nombre: "+aRam [0][0]+"<br>Precio: "+aRam [2][0] +"<br>Capacidad: "+aRam [1][0] +"<br>Tecnologia: "+aRam [3][0] +"</td>");
-            out.println("<td> Nombre: "+aPrecesador [0][0]+"<br>Precio: "+aPrecesador [2][0] +"<br>Velocidad: "+aPrecesador [1][0] +"<br>Tecnologia: "+aPrecesador [3][0] +"</td>");
+            out.println("<td> Nombre: "+aPrecesador [0][0]+"<br>Precio: "+aPrecesador [2][0] +"<br>Velocidad: "+aPrecesador [1][0] +"<br>Tecnologia: "+aPrecesador [3][0] +
+                    "</td>");
             out.println("<td> Nombre: "+aboard [0][0]+"<br>Precio: "+aboard [2][0] +"</td>");
             out.println("<td> Nombre: "+aGrafica [0][0]+"<br>Precio: "+aGrafica [2][0] +"<br>Capacidad: "+aGrafica [1][0] +"<br>Tecnologia: "+ aGrafica [3][0] +"</td>");
-            out.println("<td> Nombre: "+aPantalla [0][0]+"<br>Precio: "+aPantalla [2][0] +"</td>");
             out.println("<td> Nombre: "+aDiscoDuro [0][0]+"<br>Precio: "+aDiscoDuro [2][0] +"<br>Capacidad: "+aDiscoDuro [1][0] +"</td>");
-            out.println("<td> Nombre: "+aCooler [0][0]+"<br>Precio: "+aCooler [2][0] +"</td>");
+            out.println("<td> Nombre: "+aPantalla [0][0]+"<br>Precio: "+aPantalla [2][0] +"</td>");
              out.println("<td> Nombre: "+aFuentePoder [0][0]+"<br>Precio: "+aFuentePoder [2][0] +"<br>Voltaje: "+aFuentePoder [3][0] +"</td>");
-            //out.println("<td> Nombre"+aGabinete [0][0]+"<br>Precio"+aGabinete [2][0] +"</td>");
+           out.println("<td> Nombre"+aGabinete [0][0]+"<br>Precio"+aGabinete [2][0] +"</td>");
 
+            out.println("<td> Nombre: "+aCooler [0][0]+"<br>Precio: "+aCooler [2][0] +"</td>");
+            
             out.println("</tr>");
             
             
