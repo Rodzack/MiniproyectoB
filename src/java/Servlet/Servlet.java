@@ -112,7 +112,7 @@ public class Servlet extends HttpServlet {
             int cooler = Integer.parseInt(request.getParameter("saldo")) * 6 / 100;
             int dicoDuro = Integer.parseInt(request.getParameter("saldo")) * 6 / 100;
             int gabinete = Integer.parseInt(request.getParameter("saldo")) * 9 / 100;
-             int ram = Integer.parseInt(request.getParameter("saldo")) * 9 / 100; 
+            int ram = Integer.parseInt(request.getParameter("saldo")) * 9 / 100; 
             
             //Consultas por  parte (Mouse)        
             query = new Query();
@@ -383,6 +383,7 @@ public class Servlet extends HttpServlet {
             
 
             out.println("<h1>Servlet Servlet at " + request.getContextPath() + "</h1>");
+            out.println("Algun cambio");
             out.println("</body>");
             out.println("</html>");
         } catch (Exception ex) {
