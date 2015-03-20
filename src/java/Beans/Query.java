@@ -160,7 +160,7 @@ public class Query extends cnx {
         }
     }
     
-    public ResultSet dicoDuro(int entrada)throws Exception{
+    public ResultSet discoDuro(int entrada)throws Exception{
         try{
             getSql();
             rs = sql.executeQuery("select dp.idProducto,p.nombre, m.nombreMarca,d.capacidad,d.compatibilidad,d.descripcionAdicional,d.tamanio,d.tecnologia,dp.precio,tp.tipoProducto"
@@ -168,7 +168,7 @@ public class Query extends cnx {
                     + " join descripcion d on dp.idDescripcion=d.idDescripcion"
                     + " join marca m on dp.idMarca=m.idMarca"
                     + " join producto p on dp.idProducto=p.idProducto"
-                    + " join tipoproducto tp on p.idTipoproducto = tp.IdTipoProducto where dp.precio <="+entrada+"  and tp.tipoProducto = 'dicoDuro' order by dp.idProducto");
+                    + " join tipoproducto tp on p.idTipoproducto = tp.IdTipoProducto where dp.precio <="+entrada+"  and tp.tipoProducto = 'discoDuro' order by dp.idProducto");
             return rs;
         }catch(Exception ex){
             System.err.print("Error: "+ex.getMessage());

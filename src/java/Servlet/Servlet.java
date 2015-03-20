@@ -102,15 +102,15 @@ public class Servlet extends HttpServlet {
           
             ///calculo de total por parte
             int mouse = Integer.parseInt(request.getParameter("saldo")) * 2 / 100;
-            int pantalla = Integer.parseInt(request.getParameter("saldo")) * 10 / 100;
+            int pantalla = Integer.parseInt(request.getParameter("saldo")) * 17 / 100;
             int board = Integer.parseInt(request.getParameter("saldo")) * 12 / 100;
             int procesador = Integer.parseInt(request.getParameter("saldo")) * 19 / 100;
-            int grafica = Integer.parseInt(request.getParameter("saldo")) * 19 / 100;
+            int grafica = Integer.parseInt(request.getParameter("saldo")) * 15 / 100;
             int fuentePoder = Integer.parseInt(request.getParameter("saldo")) * 8 / 100;
             int teclado = Integer.parseInt(request.getParameter("saldo")) * 2 / 100;
             int cooler = Integer.parseInt(request.getParameter("saldo")) * 3 / 100;
             int dicoDuro = Integer.parseInt(request.getParameter("saldo")) * 6 / 100;
-            int gabinete = Integer.parseInt(request.getParameter("saldo")) * 13 / 100;
+            int gabinete = Integer.parseInt(request.getParameter("saldo")) * 10 / 100;
                out.println(board);     
                out.println(dicoDuro);     
             //Consultas por  parte (Mouse)        
@@ -272,13 +272,13 @@ public class Servlet extends HttpServlet {
             
             //Consultas por  parte (Disco Duro)        
             query = new Query();
-            res = query.dicoDuro(dicoDuro);
+            res = query.discoDuro(dicoDuro);
             int d=0;
             while (res.next()) {
                    d++;
                 }
             aDiscoDuro = new String [3][d];
-            res = query.dicoDuro(dicoDuro);
+            res = query.discoDuro(dicoDuro);
             int jd=0;
             while (res.next()) {
                     
@@ -288,6 +288,26 @@ public class Servlet extends HttpServlet {
                     out.println(aDiscoDuro[0][jd] + " | " + aDiscoDuro[1][jd] + " | " + aDiscoDuro[2][jd] + "<br>");
 
                     jd++;
+                }
+            
+            //Consultas por  parte (Gabinete)        
+            query = new Query();
+            res = query.gabinete(gabinete);
+            int gb=0;
+            while (res.next()) {
+                   gb++;
+                }
+            aGabinete = new String [3][gb];
+            res = query.gabinete(gabinete);
+            int jgb=0;
+            while (res.next()) {
+                    
+                    aGabinete[0][jgb] = res.getString("p.nombre");
+                    aGabinete[1][jgb] = res.getString("tp.tipoProducto");
+                    aGabinete[2][jgb] = res.getString("dp.precio");
+                    out.println(aGabinete[0][jgb] + " | " + aGabinete[1][jgb] + " | " + aGabinete[2][jgb] + "<br>");
+
+                    jgb++;
                 }
             
             
