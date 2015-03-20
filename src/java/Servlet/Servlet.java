@@ -131,7 +131,7 @@ public class Servlet extends HttpServlet {
                     aMouse[2][jm] = res.getString("dp.precio");
                     aMouse[3][jm] = res.getString("d.descripcionAdicional");
                     
-                    out.println(aMouse[0][jm] + " | " + aMouse[1][jm] + " | " + aMouse[2][jm] + "<br>");
+//                    out.println(aMouse[0][jm] + " | " + aMouse[1][jm] + " | " + aMouse[2][jm] + "<br>");
 
                     jm++;
                 }
@@ -151,7 +151,7 @@ public class Servlet extends HttpServlet {
                     aPantalla[0][jp] = res.getString("p.nombre");
                     aPantalla[1][jp] = res.getString("tp.tipoProducto");
                     aPantalla[2][jp] = res.getString("dp.precio");
-                    out.println(aPantalla[0][jp] + " | " + aPantalla[1][jp] + " | " + aPantalla[2][jp] + "<br>");
+//                    out.println(aPantalla[0][jp] + " | " + aPantalla[1][jp] + " | " + aPantalla[2][jp] + "<br>");
 
                     jp++;
                 }
@@ -170,7 +170,7 @@ public class Servlet extends HttpServlet {
                     aboard[0][jb] = res.getString("p.nombre");
                     aboard[1][jb] = res.getString("tp.tipoProducto");
                     aboard[2][jb] = res.getString("dp.precio");
-                    out.println(aboard[0][jb] + " | " + aboard[1][jb] + " | " + aboard[2][jb] + "<br>");
+//                    out.println(aboard[0][jb] + " | " + aboard[1][jb] + " | " + aboard[2][jb] + "<br>");
 
                     jp++;
                 }
@@ -192,7 +192,7 @@ public class Servlet extends HttpServlet {
                     aPrecesador[2][jpc] = res.getString("dp.precio");
                     aPrecesador[3][jpc] = res.getString("d.tecnologia");
                     
-                    out.println(aPrecesador[0][jpc] + " | " + aPrecesador[1][jpc] + " | " + aPrecesador[2][jpc] + "<br>");
+//                    out.println(aPrecesador[0][jpc] + " | " + aPrecesador[1][jpc] + " | " + aPrecesador[2][jpc] + "<br>");
 
                     jpc++;
                 }
@@ -213,7 +213,7 @@ public class Servlet extends HttpServlet {
                     aGrafica[2][jg] = res.getString("dp.precio");
                     aGrafica[3][jg] = res.getString("d.tecnologia");
                     
-                    out.println(aGrafica[0][jg] + " | " + aGrafica[1][jg] + " | " + aGrafica[2][jg] + "<br>");
+//                    out.println(aGrafica[0][jg] + " | " + aGrafica[1][jg] + " | " + aGrafica[2][jg] + "<br>");
 
                     jg++;
                 }
@@ -234,7 +234,7 @@ public class Servlet extends HttpServlet {
                     aFuentePoder[1][jf] = res.getString("tp.tipoProducto");
                     aFuentePoder[2][jf] = res.getString("dp.precio");
                     aFuentePoder[3][jf] = res.getString("d.voltaje");
-                    out.println(aFuentePoder[0][jf] + " | " + aFuentePoder[1][jf] + " | " + aFuentePoder[2][jf] + "<br>");
+//                    out.println(aFuentePoder[0][jf] + " | " + aFuentePoder[1][jf] + " | " + aFuentePoder[2][jf] + "<br>");
                     jf++;
                 }
             
@@ -253,7 +253,7 @@ public class Servlet extends HttpServlet {
                     aTeclado[0][jt] = res.getString("p.nombre");
                     aTeclado[1][jt] = res.getString("d.tipoDeConexion");
                     aTeclado[2][jt] = res.getString("dp.precio");
-                    out.println(aTeclado[0][jt] + " | " + aTeclado[1][jt] + " | " + aTeclado[2][jt] + "<br>");
+//                    out.println(aTeclado[0][jt] + " | " + aTeclado[1][jt] + " | " + aTeclado[2][jt] + "<br>");
 
                     jt++;
                 }
@@ -272,7 +272,7 @@ public class Servlet extends HttpServlet {
                     aCooler[0][jc] = res.getString("p.nombre");
                     aCooler[1][jc] = res.getString("tp.tipoProducto");
                     aCooler[2][jc] = res.getString("dp.precio");
-                    out.println(aCooler[0][jc] + " | " + aCooler[1][jc] + " | " + aCooler[2][jc] + "<br>");
+//                    out.println(aCooler[0][jc] + " | " + aCooler[1][jc] + " | " + aCooler[2][jc] + "<br>");
                     jc++;
                 }
             
@@ -291,7 +291,7 @@ public class Servlet extends HttpServlet {
                     aDiscoDuro[0][jd] = res.getString("p.nombre");
                     aDiscoDuro[1][jd] = res.getString("d.capacidad");
                     aDiscoDuro[2][jd] = res.getString("dp.precio");
-                    out.println(aDiscoDuro[0][jd] + " | " + aDiscoDuro[1][jd] + " | " + aDiscoDuro[2][jd] + "<br>");
+//                    out.println(aDiscoDuro[0][jd] + " | " + aDiscoDuro[1][jd] + " | " + aDiscoDuro[2][jd] + "<br>");
 
                     jd++;
                 }
@@ -311,7 +311,7 @@ public class Servlet extends HttpServlet {
                     aGabinete[0][jgb] = res.getString("p.nombre");
                     aGabinete[1][jgb] = res.getString("tp.tipoProducto");
                     aGabinete[2][jgb] = res.getString("dp.precio");
-                    out.println(aGabinete[0][jgb] + " | " + aGabinete[1][jgb] + " | " + aGabinete[2][jgb] + "<br>");
+//                    out.println(aGabinete[0][jgb] + " | " + aGabinete[1][jgb] + " | " + aGabinete[2][jgb] + "<br>");
 
                     jgb++;
                 }
@@ -331,7 +331,7 @@ public class Servlet extends HttpServlet {
                     aRam[1][jr] = res.getString("d.capacidad");
                     aRam[2][jr] = res.getString("dp.precio");
                     aRam[3][jr] = res.getString("d.tecnologia");
-                    out.println(aRam[0][jr] + " | " + aRam[1][jr] + " | " + aRam[2][jr] + "<br>");
+//                    out.println(aRam[0][jr] + " | " + aRam[1][jr] + " | " + aRam[2][jr] + "<br>");
 
                     jr++;
                 }
@@ -356,15 +356,13 @@ public class Servlet extends HttpServlet {
             out.println("<td> Nombre: "+aMouse [0][0]+"<br>Precio: "+aMouse [2][0] +"<br> Tipo de conexion: "+aMouse [1][0] +"<br>Descripcion: "+aMouse [3][0] +"</td>");
             out.println("<td> Nombre: "+aTeclado [0][0]+"<br>Precio: "+aTeclado [2][0] +"<br>Tipo de conexion: "+aTeclado [1][0] +"</td>");
             out.println("<td> Nombre: "+aRam [0][0]+"<br>Precio: "+aRam [2][0] +"<br>Capacidad: "+aRam [1][0] +"<br>Tecnologia: "+aRam [3][0] +"</td>");
-            out.println("<td> Nombre: "+aPrecesador [0][0]+"<br>Precio: "+aPrecesador [2][0] +"<br>Velocidad: "+aPrecesador [1][0] +"<br>Tecnologia: "+aPrecesador [3][0] +
-                    "</td>");
+            out.println("<td> Nombre: "+aPrecesador [0][0]+"<br>Precio: "+aPrecesador [2][0] +"<br>Velocidad: "+aPrecesador [1][0] +"<br>Tecnologia: "+aPrecesador [3][0] +"</td>");
             out.println("<td> Nombre: "+aboard [0][0]+"<br>Precio: "+aboard [2][0] +"</td>");
             out.println("<td> Nombre: "+aGrafica [0][0]+"<br>Precio: "+aGrafica [2][0] +"<br>Capacidad: "+aGrafica [1][0] +"<br>Tecnologia: "+ aGrafica [3][0] +"</td>");
             out.println("<td> Nombre: "+aDiscoDuro [0][0]+"<br>Precio: "+aDiscoDuro [2][0] +"<br>Capacidad: "+aDiscoDuro [1][0] +"</td>");
             out.println("<td> Nombre: "+aPantalla [0][0]+"<br>Precio: "+aPantalla [2][0] +"</td>");
-             out.println("<td> Nombre: "+aFuentePoder [0][0]+"<br>Precio: "+aFuentePoder [2][0] +"<br>Voltaje: "+aFuentePoder [3][0] +"</td>");
-           out.println("<td> Nombre"+aGabinete [0][0]+"<br>Precio"+aGabinete [2][0] +"</td>");
-
+            out.println("<td> Nombre: "+aFuentePoder [0][0]+"<br>Precio: "+aFuentePoder [2][0] +"<br>Voltaje: "+aFuentePoder [3][0] +"</td>");
+            out.println("<td> Nombre"+aGabinete [0][0]+"<br>Precio"+aGabinete [2][0] +"</td>");
             out.println("<td> Nombre: "+aCooler [0][0]+"<br>Precio: "+aCooler [2][0] +"</td>");
             
             out.println("</tr>");
@@ -372,28 +370,8 @@ public class Servlet extends HttpServlet {
             
             out.println("</table>");
            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-
-            out.println("<h1>Servlet Servlet at " + request.getContextPath() + "</h1>");
+            int total=Integer.parseInt(aMouse[2][0])+Integer.parseInt(aTeclado[2][0])+Integer.parseInt(aRam [2][0])+Integer.parseInt(aPrecesador [2][0])+Integer.parseInt(aboard [2][0])+Integer.parseInt(aGrafica [2][0])+Integer.parseInt(aDiscoDuro [2][0])+Integer.parseInt(aPantalla [2][0])+Integer.parseInt(aFuentePoder [2][0])+Integer.parseInt(aGabinete [2][0])+Integer.parseInt(aCooler [2][0]);
+            out.println("<h1>El precio total del computador es: "+total+" </h1>");
             out.println("</body>");
             out.println("</html>");
         } catch (Exception ex) {

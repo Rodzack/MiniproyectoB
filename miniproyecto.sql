@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-03-2015 a las 05:53:04
+-- Tiempo de generación: 20-03-2015 a las 06:20:12
 -- Versión del servidor: 5.6.20
 -- Versión de PHP: 5.5.15
 
@@ -197,7 +197,7 @@ INSERT INTO `descripcionproducto` (`idProducto`, `idMarca`, `idDescripcion`, `pr
 (49, 9, 49, 124900, 48),
 (50, 18, 50, 99000, 49),
 (51, 18, 51, 70900, 50),
-(52, 18, 52, 65900, 51),
+(52, 18, 52, 60000, 51),
 (53, 18, 53, 78900, 52),
 (54, 24, 54, 19900, 53),
 (55, 24, 55, 13000, 54),
@@ -297,7 +297,7 @@ CREATE TABLE IF NOT EXISTS `producto` (
 --
 
 INSERT INTO `producto` (`idProducto`, `nombre`, `idTipoProducto`) VALUES
-(2, 'prubea', 5),
+(2, 'Memoria Ram X3', 5),
 (3, 'Memoria RAM', 11),
 (4, 'Memoria RAM', 11),
 (5, 'Memoria RAM', 11),
