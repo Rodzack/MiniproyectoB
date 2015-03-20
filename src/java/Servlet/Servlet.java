@@ -104,14 +104,14 @@ public class Servlet extends HttpServlet {
             ///calculo de total por parte
             int mouse = Integer.parseInt(request.getParameter("saldo")) * 2 / 100;
             int pantalla = Integer.parseInt(request.getParameter("saldo")) * 17 / 100;
-            int board = Integer.parseInt(request.getParameter("saldo")) * 12 / 100;
-            int procesador = Integer.parseInt(request.getParameter("saldo")) * 19 / 100;
+            int board = Integer.parseInt(request.getParameter("saldo")) * 11 / 100;
+            int procesador = Integer.parseInt(request.getParameter("saldo")) * 18 / 100;
             int grafica = Integer.parseInt(request.getParameter("saldo")) * 15 / 100;
             int fuentePoder = Integer.parseInt(request.getParameter("saldo")) * 8 / 100;
             int teclado = Integer.parseInt(request.getParameter("saldo")) * 2 / 100;
-            int cooler = Integer.parseInt(request.getParameter("saldo")) * 3 / 100;
+            int cooler = Integer.parseInt(request.getParameter("saldo")) * 6 / 100;
             int dicoDuro = Integer.parseInt(request.getParameter("saldo")) * 6 / 100;
-            int gabinete = Integer.parseInt(request.getParameter("saldo")) * 10 / 100;
+            int gabinete = Integer.parseInt(request.getParameter("saldo")) * 9 / 100;
              int ram = Integer.parseInt(request.getParameter("saldo")) * 9 / 100; 
             
             //Consultas por  parte (Mouse)        
@@ -267,7 +267,6 @@ public class Servlet extends HttpServlet {
                     aCooler[1][jc] = res.getString("tp.tipoProducto");
                     aCooler[2][jc] = res.getString("dp.precio");
                     out.println(aCooler[0][jc] + " | " + aCooler[1][jc] + " | " + aCooler[2][jc] + "<br>");
-
                     jc++;
                 }
             
@@ -354,9 +353,8 @@ public class Servlet extends HttpServlet {
             out.println("<td> Nombre"+aDiscoDuro [0][0]+"<br>Precio"+aDiscoDuro [2][0] +"</td>");
             out.println("<td> Nombre"+aPantalla [0][0]+"<br>Precio"+aPantalla [2][0] +"</td>");
             out.println("<td> Nombre"+aCooler [0][0]+"<br>Precio"+aCooler [2][0] +"</td>");
-            
-////            out.println("<td> Nombre"+aFuentePoder [0][0]+"<br>Precio"+aFuentePoder [2][0] +"</td>");
-//out.println("<td> Nombre"+aGabinete [0][0]+"<br>Precio"+aGabinete [2][0] +"</td>");
+        // out.println("<td> Nombre"+aFuentePoder [0][0]+"<br>Precio"+aFuentePoder [2][0] +"</td>");
+        //out.println("<td> Nombre"+aGabinete [0][0]+"<br>Precio"+aGabinete [2][0] +"</td>");
 
             out.println("</tr>");
             
