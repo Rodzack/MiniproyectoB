@@ -99,6 +99,7 @@ public class Servlet extends HttpServlet {
             String aCooler[][];
             String aDiscoDuro[][];
             String aGabinete[][];
+            String aRam[][];
           
             ///calculo de total por parte
             int mouse = Integer.parseInt(request.getParameter("saldo")) * 2 / 100;
@@ -111,8 +112,8 @@ public class Servlet extends HttpServlet {
             int cooler = Integer.parseInt(request.getParameter("saldo")) * 3 / 100;
             int dicoDuro = Integer.parseInt(request.getParameter("saldo")) * 6 / 100;
             int gabinete = Integer.parseInt(request.getParameter("saldo")) * 10 / 100;
-               out.println(board);     
-               out.println(dicoDuro);     
+             int ram = Integer.parseInt(request.getParameter("saldo")) * 9 / 100; 
+            
             //Consultas por  parte (Mouse)        
             query = new Query();
             res = query.mouse(mouse);
@@ -309,7 +310,56 @@ public class Servlet extends HttpServlet {
 
                     jgb++;
                 }
+            //Consultas por  parte (Ram)        
+            query = new Query();
+            res = query.ram(ram);
+            int r=0;
+            while (res.next()) {
+                   r++;
+                }
+            aRam = new String [3][r];
+            res = query.ram(ram);
+            int jr=0;
+            while (res.next()) {
+                    
+                    aRam[0][jr] = res.getString("p.nombre");
+                    aRam[1][jr] = res.getString("tp.tipoProducto");
+                    aRam[2][jr] = res.getString("dp.precio");
+                    out.println(aRam[0][jr] + " | " + aRam[1][jr] + " | " + aRam[2][jr] + "<br>");
+
+                    jr++;
+                }
             
+            out.println("<table border=1>");
+            out.println("<th>Mouse</th>");
+            out.println("<th>Teclado</th>");
+            out.println("<th>Ram</th>");
+            out.println("<th>Procesador</th>");
+            out.println("<th>Pantalla</th>");
+            out.println("<th>Gabinete</th>");
+            out.println("<th>Board</th>");
+            out.println("<th>tarjeta de video</th>");
+            out.println("<th>Disco duro</th>");
+            out.println("<th>Cooler</th>");
+            out.println("<th>Fuente de poder</th>");
+            
+            out.println("<tr>");
+            out.println("<td> Nombre"+aMouse [0][0]+"<br>Precio"+aMouse [2][0] +"</td>");
+            out.println("<td> Nombre"+aTeclado [0][0]+"<br>Precio"+aTeclado [2][0] +"</td>");
+            out.println("<td> Nombre"+aRam [0][0]+"<br>Precio"+aRam [2][0] +"</td>");
+            out.println("<td> Nombre"+aPrecesador [0][0]+"<br>Precio"+aPrecesador [2][0] +"</td>");
+            out.println("<td> Nombre"+aPantalla [0][0]+"<br>Precio"+aPantalla [2][0] +"</td>");
+            out.println("<td> Nombre"+aGabinete [0][0]+"<br>Precio"+aGabinete [2][0] +"</td>");
+            out.println("<td> Nombre"+aboard [0][0]+"<br>Precio"+aboard [2][0] +"</td>");
+            out.println("<td> Nombre"+aGrafica [0][0]+"<br>Precio"+aGrafica [2][0] +"</td>");
+            out.println("<td> Nombre"+aDiscoDuro [0][0]+"<br>Precio"+aDiscoDuro [2][0] +"</td>");
+            out.println("<td> Nombre"+aCooler [0][0]+"<br>Precio"+aCooler [2][0] +"</td>");
+            out.println("<td> Nombre"+aFuentePoder [0][0]+"<br>Precio"+aFuentePoder [2][0] +"</td>");
+            out.println("</tr>");
+            
+            
+            out.println("</table>");
+           
             
             
             
