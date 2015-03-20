@@ -84,9 +84,10 @@ public class Servlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
+            out.println("<link rel=stylesheet href=css/estilo.css type=text/css >");
             out.println("<title>Servlet Servlet</title>");            
             out.println("</head>");
-            out.println("<body>");
+            out.println("<body  class=fondo>");
             
             //Arreglos (Matrices)
             String aMouse[][];

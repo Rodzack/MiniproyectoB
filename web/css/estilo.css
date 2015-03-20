@@ -1,4 +1,4 @@
-body{
+.body1{
    font-family: 'Lobster', cursive;
     background-image: url(image2.jpeg);
     background-repeat: no-repeat;
@@ -68,5 +68,14 @@ small{
 
 .tabla{
     border: solid 1px black;
+    
+}
+.fondo{
+    background-image: url(servlet.jpg);
+    font-family: 'Lobster', cursive;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color:white;
+    position: absolute;
     
 }
