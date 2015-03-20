@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-03-2015 a las 03:04:52
+-- Tiempo de generación: 20-03-2015 a las 04:21:07
 -- Versión del servidor: 5.6.20
 -- Versión de PHP: 5.5.15
 
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `descripcion` (
   `tamanio` varchar(20) DEFAULT NULL,
   `descripcionAdicional` varchar(100) DEFAULT NULL,
   `compatibilidad` int(11) DEFAULT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=69 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=77 ;
 
 --
 -- Volcado de datos para la tabla `descripcion`
@@ -63,7 +63,7 @@ INSERT INTO `descripcion` (`idDescripcion`, `capacidad`, `velocidad`, `tipoDeCon
 (16, '1 tb', '7200 rpm', '', 'sata', '', '', '64 mb de cache', 24),
 (17, '1 gb', '1200 mhz', '', 'ddr3', '', '', 'Memory Bandwidth Interface PCI-E 2.0 16x DVI-I, HDMI, VGA', 24),
 (18, '1 gb', '1075 mhz', '', 'ddr5', '', '', '', 24),
-(19, '2 gb', '1620 mhz', '', 'ddr3', '', '', '48 nÃºcleos', 24),
+(19, '2 gb', '1620 mhz', '', 'ddr3', '', '', '48 nucleos CUDA', 24),
 (20, '2 gb', '1620 mhz', '', 'ddr3', '', '', 'Tasa de relleno de texturas 2048 MB', 24),
 (21, '2 gb', '1000 mhz', '', 'ddr5', '', '', '', 24),
 (22, '2 gb', '1620 mhz', '', 'ddr3', '', '', '', 24),
@@ -78,7 +78,7 @@ INSERT INTO `descripcion` (`idDescripcion`, `capacidad`, `velocidad`, `tipoDeCon
 (31, '', '', 'USB', '', '', '', 'retroiluminacion LED azul', 24),
 (32, '', '', 'USB', '', '', '', 'Pantalla Tactil 4.05', 24),
 (33, '', '', 'USB', '', '', '', '', 24),
-(34, '', '', 'USB', '', '', '', 'DiseÃ±o ergonomico', 24),
+(34, '', '', 'USB', '', '', '', 'Diseno ergonomico', 24),
 (35, '', '', 'PS/2', '', '', '', '', 24),
 (36, '', '', 'USB', '', '', '', 'Negro, 8 teclas de acceso rapido', 24),
 (37, '', '', 'USB', '', '', '', 'Synapse 2.0', 24),
@@ -98,11 +98,11 @@ INSERT INTO `descripcion` (`idDescripcion`, `capacidad`, `velocidad`, `tipoDeCon
 (51, '', '', '', '', '', '', 'Seidon120m', 24),
 (52, '', '', '', '', '', '', 'Glacer 240l', 24),
 (53, '', '', '', '', '', '', 'Seidon120v', 24),
-(54, '', '2.4ghz', 'Bluetooth - Usb ', 'Ã?ptico ', '', '', 'ErgonÃ³mico', 24),
-(55, '', '', 'Usb', 'Ã?ptico ', '', '', 'Con teclado numÃ©rico retrÃ¡ctil', 24),
+(54, '', '2.4ghz', 'Bluetooth - Usb ', 'Optico ', '', '', 'Ergonomico', 24),
+(55, '', '', 'Usb', 'Optico ', '', '', 'Con teclado numerico retractil', 24),
 (56, '', '', 'Wireless - USB', '', '', '', '2.4g - usb 10 metros de alcance inalambrico', 24),
 (57, '', '', '', '', '', '', 'Acaba Con El Dolor De Mano', 24),
-(58, '', '2.4ghz', 'InalÃ¡mbrico - USB', 'Ã?ptico', '', '', '1000dpi', 24),
+(58, '', '2.4ghz', 'Inalambrico - USB', 'Optico', '', '', '1000dpi', 24),
 (59, '', '', 'USB', '', '', '', 'Cable 1.8m - 6 botones transferencia usb 1000hz', 24),
 (60, '', '1000hz', 'USB', '', '', '', '3500dpi - 3 botones programables -  Botones antideslizantes - 72g - Cable 2mts', 24),
 (61, '', '', 'USB', 'Óptico', '', '', 'Ergonomico', 24),
@@ -112,7 +112,15 @@ INSERT INTO `descripcion` (`idDescripcion`, `capacidad`, `velocidad`, `tipoDeCon
 (65, '', '', '', '16:9', '', '21.5"', 'Pantalla Slim', 24),
 (66, '', '', '', '16:9', '', '19.5"', 'Monitor Led', 24),
 (67, '', '', '', '16:9', '', '20"', 'Monitor Led Lit', 24),
-(68, '', '', '', '16:9', '', '19.5"', 'Monitor Led Lit', 24);
+(68, '', '', '', '16:9', '', '19.5"', 'Monitor Led Lit', 24),
+(69, '', '', '', 'Atx', '750 Watts', '', '20-24 Pines', 24),
+(70, '', '', '', 'Micro Atx', '450 Watts', '', '20-24 Pines ventilador 12cm', 24),
+(71, '', '', '', 'Atx', '1250 Watts', '', 'Modular 80 Plus Gold', 24),
+(72, '', '', '', 'Atx', '1250 Watts', '', 'Semi Modular 80 Plus Gold', 24),
+(73, '', '', '', 'Atx', '450 Watts', '', 'Doble Sata E Ide', 24),
+(74, '', '', '', 'Atx', '450 Watts', '', 'Semi Modular 80 Plus Gold', 24),
+(75, '', '', '', 'Atx', '500 Watts', '', '80 Plus Bronce Modular', 24),
+(76, '', '', '', 'Atx', '350 Watts (Reales)', '', '80 Plus Bronce Modular', 24);
 
 -- --------------------------------------------------------
 
@@ -127,7 +135,7 @@ CREATE TABLE IF NOT EXISTS `descripcionproducto` (
   `idDescripcion` int(11) DEFAULT NULL,
   `precio` double DEFAULT NULL,
 `idDescripcionProducto` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=68 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=76 ;
 
 --
 -- Volcado de datos para la tabla `descripcionproducto`
@@ -182,10 +190,10 @@ INSERT INTO `descripcionproducto` (`idProducto`, `idMarca`, `idDescripcion`, `pr
 (47, 13, 47, 654900, 46),
 (48, 13, 48, 254000, 47),
 (49, 9, 49, 124900, 48),
-(50, 18, 50, 199900, 49),
-(51, 18, 51, 209000, 50),
-(52, 18, 52, 399900, 51),
-(53, 18, 53, 209000, 52),
+(50, 18, 50, 99000, 49),
+(51, 18, 51, 70900, 50),
+(52, 18, 52, 65900, 51),
+(53, 18, 53, 78900, 52),
 (54, 24, 54, 19900, 53),
 (55, 24, 55, 13000, 54),
 (56, 24, 56, 119999, 55),
@@ -200,7 +208,15 @@ INSERT INTO `descripcionproducto` (`idProducto`, `idMarca`, `idDescripcion`, `pr
 (65, 2, 65, 343000, 64),
 (66, 16, 66, 220500, 65),
 (67, 14, 67, 166500, 66),
-(68, 15, 68, 196020, 67);
+(68, 15, 68, 196020, 67),
+(69, 8, 69, 24900, 68),
+(70, 22, 70, 27990, 69),
+(71, 19, 71, 539900, 70),
+(72, 18, 72, 369900, 71),
+(73, 24, 73, 25000, 72),
+(74, 18, 74, 334900, 73),
+(75, 19, 75, 234900, 74),
+(76, 22, 76, 70000, 75);
 
 -- --------------------------------------------------------
 
@@ -264,7 +280,7 @@ CREATE TABLE IF NOT EXISTS `producto` (
 `idProducto` int(11) NOT NULL,
   `nombre` varchar(100) DEFAULT NULL,
   `idTipoProducto` int(11) DEFAULT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=69 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=77 ;
 
 --
 -- Volcado de datos para la tabla `producto`
@@ -321,13 +337,13 @@ INSERT INTO `producto` (`idProducto`, `nombre`, `idTipoProducto`) VALUES
 (49, 'Board H81m-vg4', 5),
 (50, 'Disipador con Camara De Vapor Vertical', 8),
 (51, 'Disipador De Refrigeracion Liquida', 8),
-(52, 'Disipador De Refrigeracion Liquida', 8),
+(52, 'Disipador Liquido', 8),
 (53, 'Sistema Montaje Universal', 8),
-(54, 'Mouse InalÃ¡mbrico', 3),
+(54, 'Mouse Inalambrico', 3),
 (55, 'Mouse Usb', 3),
 (56, 'Mouse Anker Vertical Ergonomic', 3),
 (57, 'Mouse Vertical Wowpen', 3),
-(58, 'Mouse Ã?ptico Ns-6000', 3),
+(58, 'Mouse Optico Ns-6000', 3),
 (59, 'Mouse Genius Xscroll para pc', 3),
 (60, 'Mouse Abyssus', 3),
 (61, 'Mouse Tipo Genius', 3),
@@ -337,7 +353,15 @@ INSERT INTO `producto` (`idProducto`, `nombre`, `idTipoProducto`) VALUES
 (65, 'ASUS VS228H-P Full HD', 2),
 (66, 'Monitor Samsung LED S20D300H', 2),
 (67, 'HP Pavilion ', 2),
-(68, 'Dell D2015H', 2);
+(68, 'Dell D2015H', 2),
+(69, 'Fuente De Poder', 7),
+(70, 'Fuente Logitech', 7),
+(71, 'Fuente De Poder Corsair Rm850w', 7),
+(72, 'Fuente De Poder Cooler Master V750', 7),
+(73, 'Fuente De Poder Jyr Psu002', 7),
+(74, 'Fuente Cooler Master V650', 7),
+(75, 'Fuente Cx 500w M', 7),
+(76, 'Fuente Logitech Atx 350', 7);
 
 -- --------------------------------------------------------
 
@@ -410,12 +434,12 @@ ALTER TABLE `tipoproducto`
 -- AUTO_INCREMENT de la tabla `descripcion`
 --
 ALTER TABLE `descripcion`
-MODIFY `idDescripcion` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=69;
+MODIFY `idDescripcion` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=77;
 --
 -- AUTO_INCREMENT de la tabla `descripcionproducto`
 --
 ALTER TABLE `descripcionproducto`
-MODIFY `idDescripcionProducto` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=68;
+MODIFY `idDescripcionProducto` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=76;
 --
 -- AUTO_INCREMENT de la tabla `marca`
 --
@@ -425,7 +449,7 @@ MODIFY `idMarca` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=35;
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=69;
+MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=77;
 --
 -- AUTO_INCREMENT de la tabla `tipoproducto`
 --
