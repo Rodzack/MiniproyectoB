@@ -225,7 +225,7 @@ public class Servlet extends HttpServlet {
             while (res.next()) {
                    f++;
                 }
-            aFuentePoder = new String [3][f];
+            aFuentePoder = new String [4][f];
             res = query.fuentePoder(fuentePoder);
             int jf=0;
             while (res.next()) {
@@ -233,8 +233,8 @@ public class Servlet extends HttpServlet {
                     aFuentePoder[0][jf] = res.getString("p.nombre");
                     aFuentePoder[1][jf] = res.getString("tp.tipoProducto");
                     aFuentePoder[2][jf] = res.getString("dp.precio");
+                    aFuentePoder[3][jf] = res.getString("d.voltaje");
                     out.println(aFuentePoder[0][jf] + " | " + aFuentePoder[1][jf] + " | " + aFuentePoder[2][jf] + "<br>");
-
                     jf++;
                 }
             
@@ -351,6 +351,7 @@ public class Servlet extends HttpServlet {
         
             
             out.println("<tr>");
+<<<<<<< HEAD
             out.println("<td> Nombre"+aMouse [0][0]+"<br>Precio"+aMouse [2][0] +"<br> Tipo de conexion: "+aMouse [1][0] +"<br>Descripcion: "+aMouse [3][0] +"</td>");
             out.println("<td> Nombre"+aTeclado [0][0]+"<br>Precio"+aTeclado [2][0] +"<br>Tipo de conexion: "+aTeclado [1][0] +"</td>");
             out.println("<td> Nombre"+aRam [0][0]+"<br>Precio"+aRam [2][0] +"<br>Capacidad: "+aRam [1][0] +"<br>Tecnologia: "+aRam [3][0] +"</td>");
@@ -361,6 +362,19 @@ public class Servlet extends HttpServlet {
             out.println("<td> Nombre"+aPantalla [0][0]+"<br>Precio"+aPantalla [2][0] +"</td>");
             out.println("<td> Nombre"+aCooler [0][0]+"<br>Precio"+aCooler [2][0] +"</td>");
         // out.println("<td> Nombre"+aFuentePoder [0][0]+"<br>Precio"+aFuentePoder [2][0] +"</td>");
+=======
+            out.println("<td> Nombre: "+aMouse [0][0]+"<br>Precio: "+aMouse [2][0] +"<br> Tipo de conexion: "+aMouse [1][0] +"<br>Descripcion: "+aMouse [3][0] +"</td>");
+            out.println("<td> Nombre: "+aTeclado [0][0]+"<br>Precio: "+aTeclado [2][0] +"<br>Tipo de conexion: "+aTeclado [1][0] +"</td>");
+            out.println("<td> Nombre: "+aRam [0][0]+"<br>Precio: "+aRam [2][0] +"<br>Capacidad: "+aRam [1][0] +"<br>Tecnologia: "+aRam [3][0] +"</td>");
+            out.println("<td> Nombre: "+aPrecesador [0][0]+"<br>Precio: "+aPrecesador [2][0] +"<br>Velocidad: "+aPrecesador [1][0] +"<br>Tecnologia: "+aPrecesador [3][0] +
+                    "</td>");
+            out.println("<td> Nombre: "+aboard [0][0]+"<br>Precio: "+aboard [2][0] +"</td>");
+            out.println("<td> Nombre: "+aGrafica [0][0]+"<br>Precio: "+aGrafica [2][0] +"<br>Capacidad: "+aGrafica [1][0] +"<br>Tecnologia: "+ aGrafica [3][0] +"</td>");
+            out.println("<td> Nombre: "+aDiscoDuro [0][0]+"<br>Precio: "+aDiscoDuro [2][0] +"<br>Capacidad: "+aDiscoDuro [1][0] +"</td>");
+            out.println("<td> Nombre: "+aPantalla [0][0]+"<br>Precio: "+aPantalla [2][0] +"</td>");
+            out.println("<td> Nombre: "+aCooler [0][0]+"<br>Precio: "+aCooler [2][0] +"</td>");
+             out.println("<td> Nombre: "+aFuentePoder [0][0]+"<br>Precio: "+aFuentePoder [2][0] +"<br>Voltaje: "+aFuentePoder [3][0] +"</td>");
+>>>>>>> origin/master
         //out.println("<td> Nombre"+aGabinete [0][0]+"<br>Precio"+aGabinete [2][0] +"</td>");
 
             out.println("</tr>");

@@ -148,7 +148,7 @@ public class Query extends cnx {
     public ResultSet fuentePoder(int entrada)throws Exception{
         try{
             getSql();
-            rs = sql.executeQuery("select dp.idProducto,p.nombre, m.nombreMarca,d.capacidad,d.tipoDeConexion,d.compatibilidad,d.descripcionAdicional,d.tamanio,d.tecnologia,dp.precio,tp.tipoProducto"
+            rs = sql.executeQuery("select dp.idProducto,p.nombre, m.nombreMarca,d.capacidad,d.tipoDeConexion,d.compatibilidad,d.descripcionAdicional,d.tamanio,d.tecnologia,d.voltaje,dp.precio,tp.tipoProducto"
                     + " from descripcionproducto dp"
                     + " join descripcion d on dp.idDescripcion=d.idDescripcion"
                     + " join marca m on dp.idMarca=m.idMarca"
