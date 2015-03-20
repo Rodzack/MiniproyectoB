@@ -354,8 +354,7 @@ public class Servlet extends HttpServlet {
             out.println("<td> Nombre"+aMouse [0][0]+"<br>Precio"+aMouse [2][0] +"<br> Tipo de conexion: "+aMouse [1][0] +"<br>Descripcion: "+aMouse [3][0] +"</td>");
             out.println("<td> Nombre"+aTeclado [0][0]+"<br>Precio"+aTeclado [2][0] +"<br>Tipo de conexion: "+aTeclado [1][0] +"</td>");
             out.println("<td> Nombre"+aRam [0][0]+"<br>Precio"+aRam [2][0] +"<br>Capacidad: "+aRam [1][0] +"<br>Tecnologia: "+aRam [3][0] +"</td>");
-            out.println("<td> Nombre"+aPrecesador [0][0]+"<br>Precio"+aPrecesador [2][0] +"<br>Velocidad: "+aPrecesador [1][0] +"<br>Tecnologia: "+aPrecesador [3][0] +
-                    "</td>");
+            out.println("<td> Nombre"+aPrecesador [0][0]+"<br>Precio"+aPrecesador [2][0] +"<br>Velocidad: "+aPrecesador [1][0] +"<br>Tecnologia: "+aPrecesador [3][0] + "</td>");
             out.println("<td> Nombre"+aboard [0][0]+"<br>Precio"+aboard [2][0] +"</td>");
             out.println("<td> Nombre"+aGrafica [0][0]+"<br>Precio"+aGrafica [2][0] +"<br>Capacidad: "+aGrafica [1][0] +"<br>Tecnologia: "+ aGrafica [3][0] +"</td>");
             out.println("<td> Nombre"+aDiscoDuro [0][0]+"<br> Precio"+aDiscoDuro [2][0] +"<br>Capacidad: "+aDiscoDuro [1][0] +"</td>");

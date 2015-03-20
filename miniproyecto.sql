@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-03-2015 a las 04:21:07
+-- Tiempo de generación: 20-03-2015 a las 05:53:04
 -- Versión del servidor: 5.6.20
 -- Versión de PHP: 5.5.15
 
@@ -36,10 +36,10 @@ CREATE TABLE IF NOT EXISTS `descripcion` (
   `tipoDeConexion` varchar(20) DEFAULT NULL,
   `tecnologia` varchar(25) CHARACTER SET utf16 COLLATE utf16_spanish_ci DEFAULT NULL,
   `voltaje` varchar(25) DEFAULT NULL,
-  `tamanio` varchar(20) DEFAULT NULL,
+  `tamanio` varchar(25) DEFAULT NULL,
   `descripcionAdicional` varchar(100) DEFAULT NULL,
   `compatibilidad` int(11) DEFAULT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=77 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=82 ;
 
 --
 -- Volcado de datos para la tabla `descripcion`
@@ -120,7 +120,12 @@ INSERT INTO `descripcion` (`idDescripcion`, `capacidad`, `velocidad`, `tipoDeCon
 (73, '', '', '', 'Atx', '450 Watts', '', 'Doble Sata E Ide', 24),
 (74, '', '', '', 'Atx', '450 Watts', '', 'Semi Modular 80 Plus Gold', 24),
 (75, '', '', '', 'Atx', '500 Watts', '', '80 Plus Bronce Modular', 24),
-(76, '', '', '', 'Atx', '350 Watts (Reales)', '', '80 Plus Bronce Modular', 24);
+(76, '', '', '', 'Atx', '350 Watts (Reales)', '', '80 Plus Bronce Modular', 24),
+(77, '', '', '', '', '', '10 x 19.7 x 22.2', 'Mid Tower Computer Case', 24),
+(78, '', '', '', '', '', '19.09 x 7.48 x 18.30', 'Gaming Case', 24),
+(79, '', '', '', '', '', '18.08 x 20.56 x 8.12', 'Mid Tower Case', 24),
+(80, '', '', '', '', '', '8 x 19.1 x 16.8', 'Epic Edition Tower Case', 24),
+(81, '250Gb', '5400RPM', 'SATA III', '', '', '', '8 MB Cache', 24);
 
 -- --------------------------------------------------------
 
@@ -135,7 +140,7 @@ CREATE TABLE IF NOT EXISTS `descripcionproducto` (
   `idDescripcion` int(11) DEFAULT NULL,
   `precio` double DEFAULT NULL,
 `idDescripcionProducto` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=76 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=81 ;
 
 --
 -- Volcado de datos para la tabla `descripcionproducto`
@@ -216,7 +221,12 @@ INSERT INTO `descripcionproducto` (`idProducto`, `idMarca`, `idDescripcion`, `pr
 (73, 24, 73, 25000, 72),
 (74, 18, 74, 334900, 73),
 (75, 19, 75, 234900, 74),
-(76, 22, 76, 70000, 75);
+(76, 22, 76, 70000, 75),
+(77, 18, 77, 106000, 76),
+(78, 24, 78, 150000, 77),
+(79, 24, 79, 90000, 78),
+(80, 8, 80, 122000, 79),
+(81, 24, 81, 60000, 80);
 
 -- --------------------------------------------------------
 
@@ -242,7 +252,7 @@ INSERT INTO `marca` (`idMarca`, `nombreMarca`) VALUES
 (5, 'Envidia'),
 (6, 'Kingston'),
 (7, 'Biostar'),
-(8, 'Termaltek'),
+(8, 'Thermaltake'),
 (9, 'Asrock'),
 (10, 'MSI'),
 (11, 'Apple'),
@@ -280,7 +290,7 @@ CREATE TABLE IF NOT EXISTS `producto` (
 `idProducto` int(11) NOT NULL,
   `nombre` varchar(100) DEFAULT NULL,
   `idTipoProducto` int(11) DEFAULT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=77 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=82 ;
 
 --
 -- Volcado de datos para la tabla `producto`
@@ -361,7 +371,12 @@ INSERT INTO `producto` (`idProducto`, `nombre`, `idTipoProducto`) VALUES
 (73, 'Fuente De Poder Jyr Psu002', 7),
 (74, 'Fuente Cooler Master V650', 7),
 (75, 'Fuente Cx 500w M', 7),
-(76, 'Fuente Logitech Atx 350', 7);
+(76, 'Fuente Logitech Atx 350', 7),
+(77, 'HAF 922 ', 10),
+(78, 'Optimus Gs-6000r', 10),
+(79, 'NZXT Guardian 921 RB', 10),
+(80, 'Commander MS-I VN400A1W2N-B', 10),
+(81, 'Western Digital WD3200LPVX', 1);
 
 -- --------------------------------------------------------
 
@@ -434,12 +449,12 @@ ALTER TABLE `tipoproducto`
 -- AUTO_INCREMENT de la tabla `descripcion`
 --
 ALTER TABLE `descripcion`
-MODIFY `idDescripcion` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=77;
+MODIFY `idDescripcion` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=82;
 --
 -- AUTO_INCREMENT de la tabla `descripcionproducto`
 --
 ALTER TABLE `descripcionproducto`
-MODIFY `idDescripcionProducto` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=76;
+MODIFY `idDescripcionProducto` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=81;
 --
 -- AUTO_INCREMENT de la tabla `marca`
 --
@@ -449,7 +464,7 @@ MODIFY `idMarca` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=35;
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=77;
+MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=82;
 --
 -- AUTO_INCREMENT de la tabla `tipoproducto`
 --
