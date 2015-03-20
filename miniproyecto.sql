@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.12
+-- version 4.2.7.1
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-03-2015 a las 14:37:33
--- Versión del servidor: 5.6.16
--- Versión de PHP: 5.5.11
+-- Tiempo de generación: 20-03-2015 a las 03:04:52
+-- Versión del servidor: 5.6.20
+-- Versión de PHP: 5.5.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -30,7 +30,7 @@ USE `miniproyecto`;
 
 DROP TABLE IF EXISTS `descripcion`;
 CREATE TABLE IF NOT EXISTS `descripcion` (
-  `idDescripcion` int(11) NOT NULL AUTO_INCREMENT,
+`idDescripcion` int(11) NOT NULL,
   `capacidad` varchar(15) DEFAULT NULL,
   `velocidad` varchar(10) DEFAULT NULL,
   `tipoDeConexion` varchar(20) DEFAULT NULL,
@@ -38,10 +38,8 @@ CREATE TABLE IF NOT EXISTS `descripcion` (
   `voltaje` varchar(25) DEFAULT NULL,
   `tamanio` varchar(20) DEFAULT NULL,
   `descripcionAdicional` varchar(100) DEFAULT NULL,
-  `compatibilidad` int(11) DEFAULT NULL,
-  PRIMARY KEY (`idDescripcion`),
-  KEY `compatibilidad` (`compatibilidad`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=62 ;
+  `compatibilidad` int(11) DEFAULT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=69 ;
 
 --
 -- Volcado de datos para la tabla `descripcion`
@@ -71,11 +69,11 @@ INSERT INTO `descripcion` (`idDescripcion`, `capacidad`, `velocidad`, `tipoDeCon
 (22, '2 gb', '1620 mhz', '', 'ddr3', '', '', '', 24),
 (23, '2 gb', '1600 mhz', '', 'ddr3', '', '', '', 24),
 (24, '4 nucleos', '3.5 Ghz', 'Socket Lga 1150', '4ta Gen', '', '', '', 3),
-(25, '6 Nucleos ', '3.5 mhz', 'Am3+ ', '', '95w', '', '', 4),
-(26, '6 nucleos', '4.2 mhz', 'Am3+', '', '125 w', '', '', 4),
-(27, '2 nucleos', '2.8 mhz', 'Socket Lga1150', '4ta Gen', '', '', '', 3),
-(28, '2 nucleos', '3.2 mhz', 'Socket Lga1150', 'Devils Cayon', '', '', '', 3),
-(29, '4 nucleos', '3.5 mhz', 'Socket Lga1150', '4ta Gen', '', '', '', 3),
+(25, '6 Nucleos ', '3.5 Ghz', 'Am3+ ', '', '95w', '', '', 4),
+(26, '6 nucleos', '4.2 Ghz', 'Am3+', '', '125 w', '', '', 4),
+(27, '2 nucleos', '2.8 Ghz', 'Socket Lga1150', '4ta Gen', '', '', '', 3),
+(28, '2 nucleos', '3.2 Ghz', 'Socket Lga1150', 'Devils Cayon', '', '', '', 3),
+(29, '2 nucleos', '3.2 Ghz', 'Socket Lga1150', '', '', '', '', 3),
 (30, '', '', 'Inalambrica', 'Plug and play', '', '', 'Touchpad Integrado de 9 cm, 10 metros de alcance inalambrico', 24),
 (31, '', '', 'USB', '', '', '', 'retroiluminacion LED azul', 24),
 (32, '', '', 'USB', '', '', '', 'Pantalla Tactil 4.05', 24),
@@ -91,7 +89,7 @@ INSERT INTO `descripcion` (`idDescripcion`, `capacidad`, `velocidad`, `tipoDeCon
 (42, '', '3.2 GHz', '', '', '', '', '2 nucleos', 3),
 (43, '', '3.5ghz', 'Socket Lga1150', '4ta Gen', '88 W', '37.5mm x 37.5mm', '4 nucleos', 3),
 (44, '', '', '775', 'DDR3', '', '', 'VS3', 3),
-(45, '', '', '775', 'DDR2 / DDR3', '', '', 'PCI', 4),
+(45, '', '', '', 'DDR2 / DDR3', '', '', '2 puestos PCI', 4),
 (46, '', '', '', 'DDR2 / DDR3', '', '', '4ta Gen Uefi Bios', 3),
 (47, '', '', 'Lga 1150', 'DDR3', '', '', 'Soporte Multi-gpu', 3),
 (48, '', '', 'AM3+', 'DDR3', '', '', 'Atx Crossfire Usb 3.0 Sata3', 4),
@@ -107,7 +105,14 @@ INSERT INTO `descripcion` (`idDescripcion`, `capacidad`, `velocidad`, `tipoDeCon
 (58, '', '2.4ghz', 'InalÃ¡mbrico - USB', 'Ã?ptico', '', '', '1000dpi', 24),
 (59, '', '', 'USB', '', '', '', 'Cable 1.8m - 6 botones transferencia usb 1000hz', 24),
 (60, '', '1000hz', 'USB', '', '', '', '3500dpi - 3 botones programables -  Botones antideslizantes - 72g - Cable 2mts', 24),
-(61, '', '', 'USB', 'Óptico', '', '', 'Ergonomico', 24);
+(61, '', '', 'USB', 'Óptico', '', '', 'Ergonomico', 24),
+(62, '', '', '', '16:9', '', '23"', 'Pantalla LED-Lit', 24),
+(63, '', '', '', '16:9', '', '23.6"', 'Pantalla LED Full HD', 24),
+(64, '', '', '', '16:9', '', '27"', 'Ultrafast 1ms', 24),
+(65, '', '', '', '16:9', '', '21.5"', 'Pantalla Slim', 24),
+(66, '', '', '', '16:9', '', '19.5"', 'Monitor Led', 24),
+(67, '', '', '', '16:9', '', '20"', 'Monitor Led Lit', 24),
+(68, '', '', '', '16:9', '', '19.5"', 'Monitor Led Lit', 24);
 
 -- --------------------------------------------------------
 
@@ -121,76 +126,81 @@ CREATE TABLE IF NOT EXISTS `descripcionproducto` (
   `idMarca` int(11) DEFAULT NULL,
   `idDescripcion` int(11) DEFAULT NULL,
   `precio` double DEFAULT NULL,
-  KEY `idProducto` (`idProducto`),
-  KEY `idMarca` (`idMarca`),
-  KEY `idDescripcion` (`idDescripcion`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+`idDescripcionProducto` int(11) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=68 ;
 
 --
 -- Volcado de datos para la tabla `descripcionproducto`
 --
 
-INSERT INTO `descripcionproducto` (`idProducto`, `idMarca`, `idDescripcion`, `precio`) VALUES
-(2, 5, 2, 53456),
-(3, 25, 3, 84000),
-(4, 6, 4, 204990),
-(5, 26, 5, 179900),
-(6, 28, 6, 212000),
-(7, 19, 7, 3360000),
-(8, 19, 8, 650000),
-(9, 26, 9, 220000),
-(10, 6, 10, 225000),
-(11, 29, 11, 204900),
-(12, 1, 12, 125900),
-(13, 30, 13, 137900),
-(14, 6, 14, 129900),
-(15, 1, 15, 209000),
-(16, 31, 16, 119000),
-(17, 5, 17, 94400),
-(18, 32, 18, 264000),
-(19, 5, 19, 134900),
-(20, 5, 20, 154900),
-(21, 4, 21, 384000),
-(22, 4, 22, 220000),
-(23, 5, 23, 199900),
-(24, 3, 24, 504900),
-(25, 4, 25, 304900),
-(26, 4, 26, 364900),
-(30, 3, 27, 159900),
-(28, 3, 28, 23000),
-(29, 3, 29, 664900),
-(30, 22, 27, 99000),
-(31, 21, 31, 71000),
-(32, 23, 32, 649000),
-(33, 33, 33, 17900),
-(34, 24, 34, 12999),
-(35, 24, 35, 15299),
-(36, 21, 36, 31900),
-(37, 23, 37, 289000),
-(38, 34, 38, 89900),
-(39, 21, 38, 30900),
-(40, 22, 40, 87900),
-(41, 3, 41, 664900),
-(42, 3, 42, 230000),
-(43, 3, 43, 664900),
-(44, 9, 44, 189000),
-(45, 9, 45, 139990),
-(45, 2, 45, 174900),
-(46, 13, 46, 654900),
-(47, 13, 47, 254000),
-(48, 9, 48, 124900),
-(48, 18, 48, 199900),
-(49, 18, 49, 209000),
-(49, 18, 49, 399900),
-(49, 18, 49, 209000),
-(54, 24, 54, 19900),
-(55, 24, 55, 13000),
-(56, 24, 56, 119999),
-(57, 24, 57, 39900),
-(58, 21, 58, 24900),
-(59, 21, 59, 45000),
-(60, 23, 60, 94900),
-(61, 24, 61, 7950);
+INSERT INTO `descripcionproducto` (`idProducto`, `idMarca`, `idDescripcion`, `precio`, `idDescripcionProducto`) VALUES
+(2, 5, 2, 53456, 1),
+(3, 25, 3, 84000, 2),
+(4, 6, 4, 204990, 3),
+(5, 26, 5, 179900, 4),
+(6, 28, 6, 212000, 5),
+(7, 19, 7, 3360000, 6),
+(8, 19, 8, 650000, 7),
+(9, 26, 9, 220000, 8),
+(10, 6, 10, 225000, 9),
+(11, 29, 11, 204900, 10),
+(12, 1, 12, 125900, 11),
+(13, 30, 13, 137900, 12),
+(14, 6, 14, 129900, 13),
+(15, 1, 15, 209000, 14),
+(16, 31, 16, 119000, 15),
+(17, 5, 17, 94400, 16),
+(18, 32, 18, 264000, 17),
+(19, 5, 19, 134900, 18),
+(20, 5, 20, 154900, 19),
+(21, 4, 21, 384000, 20),
+(22, 4, 22, 220000, 21),
+(23, 5, 23, 199900, 22),
+(24, 3, 24, 504900, 23),
+(25, 4, 25, 304900, 24),
+(26, 4, 26, 364900, 25),
+(27, 3, 27, 159900, 26),
+(28, 3, 28, 664900, 27),
+(29, 3, 29, 230000, 28),
+(30, 22, 30, 99000, 29),
+(31, 21, 31, 71000, 30),
+(32, 23, 32, 649000, 31),
+(33, 33, 33, 17900, 32),
+(34, 24, 34, 12999, 33),
+(35, 24, 35, 15299, 34),
+(36, 21, 36, 31900, 35),
+(37, 23, 37, 289000, 36),
+(38, 34, 38, 89900, 37),
+(39, 21, 38, 30900, 38),
+(40, 22, 40, 87900, 39),
+(41, 3, 41, 664900, 40),
+(42, 3, 42, 230000, 41),
+(43, 3, 43, 664900, 42),
+(44, 9, 44, 189000, 43),
+(45, 9, 45, 139990, 44),
+(46, 2, 46, 174900, 45),
+(47, 13, 47, 654900, 46),
+(48, 13, 48, 254000, 47),
+(49, 9, 49, 124900, 48),
+(50, 18, 50, 199900, 49),
+(51, 18, 51, 209000, 50),
+(52, 18, 52, 399900, 51),
+(53, 18, 53, 209000, 52),
+(54, 24, 54, 19900, 53),
+(55, 24, 55, 13000, 54),
+(56, 24, 56, 119999, 55),
+(57, 24, 57, 39900, 56),
+(58, 21, 58, 24900, 57),
+(59, 21, 59, 45000, 58),
+(60, 23, 60, 94900, 59),
+(61, 24, 61, 7950, 60),
+(62, 16, 62, 318500, 61),
+(63, 2, 63, 382592, 62),
+(64, 2, 64, 686000, 63),
+(65, 2, 65, 343000, 64),
+(66, 16, 66, 220500, 65),
+(67, 14, 67, 166500, 66),
+(68, 15, 68, 196020, 67);
 
 -- --------------------------------------------------------
 
@@ -200,9 +210,8 @@ INSERT INTO `descripcionproducto` (`idProducto`, `idMarca`, `idDescripcion`, `pr
 
 DROP TABLE IF EXISTS `marca`;
 CREATE TABLE IF NOT EXISTS `marca` (
-  `idMarca` int(11) NOT NULL AUTO_INCREMENT,
-  `nombreMarca` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`idMarca`)
+`idMarca` int(11) NOT NULL,
+  `nombreMarca` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=35 ;
 
 --
@@ -252,12 +261,10 @@ INSERT INTO `marca` (`idMarca`, `nombreMarca`) VALUES
 
 DROP TABLE IF EXISTS `producto`;
 CREATE TABLE IF NOT EXISTS `producto` (
-  `idProducto` int(11) NOT NULL AUTO_INCREMENT,
+`idProducto` int(11) NOT NULL,
   `nombre` varchar(100) DEFAULT NULL,
-  `idTipoProducto` int(11) DEFAULT NULL,
-  PRIMARY KEY (`idProducto`),
-  KEY `idTipoProducto` (`idTipoProducto`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=62 ;
+  `idTipoProducto` int(11) DEFAULT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=69 ;
 
 --
 -- Volcado de datos para la tabla `producto`
@@ -290,8 +297,8 @@ INSERT INTO `producto` (`idProducto`, `nombre`, `idTipoProducto`) VALUES
 (25, 'Amd Fx 6300 Vishera', 9),
 (26, 'Amd Fx 6350', 9),
 (27, 'Intel Celeron G1840', 9),
-(28, 'Intel Celeron G1840', 9),
-(29, 'Intel Core I5 4690k', 9),
+(28, 'Core I5 4690k', 9),
+(29, 'Pentium G3258', 9),
 (30, 'Teclado inalambrico', 4),
 (31, 'Teclado Manticore Kb-g255', 4),
 (32, 'Teclado Deathstalker Ultimate ', 4),
@@ -307,7 +314,7 @@ INSERT INTO `producto` (`idProducto`, `nombre`, `idTipoProducto`) VALUES
 (42, 'Procesador Pentium G3258', 9),
 (43, 'Procesador I5 4690k', 9),
 (44, 'Board G41M', 5),
-(45, 'Board G41M', 5),
+(45, 'Board', 5),
 (46, 'Board H81m-c', 5),
 (47, 'Board Z97x-ud7', 5),
 (48, 'Board Ga-970a-ds3p', 5),
@@ -323,7 +330,14 @@ INSERT INTO `producto` (`idProducto`, `nombre`, `idTipoProducto`) VALUES
 (58, 'Mouse Ã?ptico Ns-6000', 3),
 (59, 'Mouse Genius Xscroll para pc', 3),
 (60, 'Mouse Abyssus', 3),
-(61, 'Mouse Tipo Genius', 3);
+(61, 'Mouse Tipo Genius', 3),
+(62, 'Monitor Screen LED-Lit', 2),
+(63, 'Asus VS247H-P', 2),
+(64, 'ASUS VS278Q-P Full HD', 2),
+(65, 'ASUS VS228H-P Full HD', 2),
+(66, 'Monitor Samsung LED S20D300H', 2),
+(67, 'HP Pavilion ', 2),
+(68, 'Dell D2015H', 2);
 
 -- --------------------------------------------------------
 
@@ -333,9 +347,8 @@ INSERT INTO `producto` (`idProducto`, `nombre`, `idTipoProducto`) VALUES
 
 DROP TABLE IF EXISTS `tipoproducto`;
 CREATE TABLE IF NOT EXISTS `tipoproducto` (
-  `idTipoProducto` int(11) NOT NULL AUTO_INCREMENT,
-  `tipoProducto` varchar(30) DEFAULT NULL,
-  PRIMARY KEY (`idTipoProducto`)
+`idTipoProducto` int(11) NOT NULL,
+  `tipoProducto` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
@@ -356,6 +369,69 @@ INSERT INTO `tipoproducto` (`idTipoProducto`, `tipoProducto`) VALUES
 (11, 'ram');
 
 --
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `descripcion`
+--
+ALTER TABLE `descripcion`
+ ADD PRIMARY KEY (`idDescripcion`), ADD KEY `compatibilidad` (`compatibilidad`);
+
+--
+-- Indices de la tabla `descripcionproducto`
+--
+ALTER TABLE `descripcionproducto`
+ ADD PRIMARY KEY (`idDescripcionProducto`), ADD KEY `idProducto` (`idProducto`), ADD KEY `idMarca` (`idMarca`), ADD KEY `idDescripcion` (`idDescripcion`);
+
+--
+-- Indices de la tabla `marca`
+--
+ALTER TABLE `marca`
+ ADD PRIMARY KEY (`idMarca`);
+
+--
+-- Indices de la tabla `producto`
+--
+ALTER TABLE `producto`
+ ADD PRIMARY KEY (`idProducto`), ADD KEY `idTipoProducto` (`idTipoProducto`);
+
+--
+-- Indices de la tabla `tipoproducto`
+--
+ALTER TABLE `tipoproducto`
+ ADD PRIMARY KEY (`idTipoProducto`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `descripcion`
+--
+ALTER TABLE `descripcion`
+MODIFY `idDescripcion` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=69;
+--
+-- AUTO_INCREMENT de la tabla `descripcionproducto`
+--
+ALTER TABLE `descripcionproducto`
+MODIFY `idDescripcionProducto` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=68;
+--
+-- AUTO_INCREMENT de la tabla `marca`
+--
+ALTER TABLE `marca`
+MODIFY `idMarca` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=35;
+--
+-- AUTO_INCREMENT de la tabla `producto`
+--
+ALTER TABLE `producto`
+MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=69;
+--
+-- AUTO_INCREMENT de la tabla `tipoproducto`
+--
+ALTER TABLE `tipoproducto`
+MODIFY `idTipoProducto` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+--
 -- Restricciones para tablas volcadas
 --
 
@@ -363,21 +439,21 @@ INSERT INTO `tipoproducto` (`idTipoProducto`, `tipoProducto`) VALUES
 -- Filtros para la tabla `descripcion`
 --
 ALTER TABLE `descripcion`
-  ADD CONSTRAINT `descripcion_ibfk_1` FOREIGN KEY (`compatibilidad`) REFERENCES `marca` (`idMarca`);
+ADD CONSTRAINT `descripcion_ibfk_1` FOREIGN KEY (`compatibilidad`) REFERENCES `marca` (`idMarca`);
 
 --
 -- Filtros para la tabla `descripcionproducto`
 --
 ALTER TABLE `descripcionproducto`
-  ADD CONSTRAINT `descripcionproducto_ibfk_1` FOREIGN KEY (`idProducto`) REFERENCES `producto` (`idProducto`),
-  ADD CONSTRAINT `descripcionproducto_ibfk_2` FOREIGN KEY (`idMarca`) REFERENCES `marca` (`idMarca`),
-  ADD CONSTRAINT `descripcionproducto_ibfk_3` FOREIGN KEY (`idDescripcion`) REFERENCES `descripcion` (`idDescripcion`);
+ADD CONSTRAINT `descripcionproducto_ibfk_1` FOREIGN KEY (`idProducto`) REFERENCES `producto` (`idProducto`),
+ADD CONSTRAINT `descripcionproducto_ibfk_2` FOREIGN KEY (`idMarca`) REFERENCES `marca` (`idMarca`),
+ADD CONSTRAINT `descripcionproducto_ibfk_3` FOREIGN KEY (`idDescripcion`) REFERENCES `descripcion` (`idDescripcion`);
 
 --
 -- Filtros para la tabla `producto`
 --
 ALTER TABLE `producto`
-  ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`idTipoProducto`) REFERENCES `tipoproducto` (`idTipoProducto`);
+ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`idTipoProducto`) REFERENCES `tipoproducto` (`idTipoProducto`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
