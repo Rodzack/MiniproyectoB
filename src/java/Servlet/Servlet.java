@@ -112,6 +112,7 @@ public class Servlet extends HttpServlet {
             int dicoDuro = Integer.parseInt(request.getParameter("saldo")) * 6 / 100;
             int gabinete = Integer.parseInt(request.getParameter("saldo")) * 13 / 100;
                out.println(board);     
+               out.println(dicoDuro);     
             //Consultas por  parte (Mouse)        
             query = new Query();
             res = query.mouse(mouse);
@@ -210,6 +211,84 @@ public class Servlet extends HttpServlet {
                     jg++;
                 }
             
+            //Consultas por  parte (Fuente de poder)        
+            query = new Query();
+            res = query.fuentePoder(fuentePoder);
+            int f=0;
+            while (res.next()) {
+                   f++;
+                }
+            aFuentePoder = new String [3][f];
+            res = query.fuentePoder(fuentePoder);
+            int jf=0;
+            while (res.next()) {
+                    
+                    aFuentePoder[0][jf] = res.getString("p.nombre");
+                    aFuentePoder[1][jf] = res.getString("tp.tipoProducto");
+                    aFuentePoder[2][jf] = res.getString("dp.precio");
+                    out.println(aFuentePoder[0][jf] + " | " + aFuentePoder[1][jf] + " | " + aFuentePoder[2][jf] + "<br>");
+
+                    jf++;
+                }
+            
+            //Consultas por  parte (Teclado)        
+            query = new Query();
+            res = query.teclado(teclado);
+            int t=0;
+            while (res.next()) {
+                   t++;
+                }
+            aTeclado = new String [3][t];
+            res = query.teclado(teclado);
+            int jt=0;
+            while (res.next()) {
+                    
+                    aTeclado[0][jt] = res.getString("p.nombre");
+                    aTeclado[1][jt] = res.getString("tp.tipoProducto");
+                    aTeclado[2][jt] = res.getString("dp.precio");
+                    out.println(aTeclado[0][jt] + " | " + aTeclado[1][jt] + " | " + aTeclado[2][jt] + "<br>");
+
+                    jt++;
+                }
+            //Consultas por  parte (Cooler)        
+            query = new Query();
+            res = query.cooler(cooler);
+            int c=0;
+            while (res.next()) {
+                   c++;
+                }
+            aCooler = new String [3][c];
+            res = query.cooler(cooler);
+            int jc=0;
+            while (res.next()) {
+                    
+                    aCooler[0][jc] = res.getString("p.nombre");
+                    aCooler[1][jc] = res.getString("tp.tipoProducto");
+                    aCooler[2][jc] = res.getString("dp.precio");
+                    out.println(aCooler[0][jc] + " | " + aCooler[1][jc] + " | " + aCooler[2][jc] + "<br>");
+
+                    jc++;
+                }
+            
+            //Consultas por  parte (Disco Duro)        
+            query = new Query();
+            res = query.dicoDuro(dicoDuro);
+            int d=0;
+            while (res.next()) {
+                   d++;
+                }
+            aDiscoDuro = new String [3][d];
+            res = query.dicoDuro(dicoDuro);
+            int jd=0;
+            while (res.next()) {
+                    
+                    aDiscoDuro[0][jd] = res.getString("p.nombre");
+                    aDiscoDuro[1][jd] = res.getString("tp.tipoProducto");
+                    aDiscoDuro[2][jd] = res.getString("dp.precio");
+                    out.println(aDiscoDuro[0][jd] + " | " + aDiscoDuro[1][jd] + " | " + aDiscoDuro[2][jd] + "<br>");
+
+                    jd++;
+                }
             
             
             
