@@ -354,7 +354,7 @@ public class Servlet extends HttpServlet {
             
             out.println("<tr>");
 
-            out.println("<td> Nombre: "+aMouse [0][0]+"<br>Precio: "+aMouse [2][0] +"<br> Tipo de conexion: "+aMouse [1][0] +"<br>Descripcion: "+aMouse [3][0] +"</td>");
+            out.println("<td> Nombre: "+aMouse [0][2]+"<br>Precio: "+aMouse [2][2] +"<br> Tipo de conexion: "+aMouse [1][2] +"<br>Descripcion: "+aMouse [3][2] +"</td>");
             out.println("<td> Nombre: "+aTeclado [0][0]+"<br>Precio: "+aTeclado [2][0] +"<br>Tipo de conexion: "+aTeclado [1][0] +"</td>");
             out.println("<td> Nombre: "+aRam [0][0]+"<br>Precio: "+aRam [2][0] +"<br>Capacidad: "+aRam [1][0] +"<br>Tecnologia: "+aRam [3][0] +"</td>");
             out.println("<td> Nombre: "+aPrecesador [0][0]+"<br>Precio: "+aPrecesador [2][0] +"<br>Velocidad: "+aPrecesador [1][0] +"<br>Tecnologia: "+aPrecesador [3][0] +"</td>");
@@ -371,7 +371,7 @@ public class Servlet extends HttpServlet {
             
             out.println("</table>");
            
-            int total=Integer.parseInt(aMouse[2][0])+Integer.parseInt(aTeclado[2][0])+Integer.parseInt(aRam [2][0])+Integer.parseInt(aPrecesador [2][0])+Integer.parseInt(aboard [2][0])+Integer.parseInt(aGrafica [2][0])+Integer.parseInt(aDiscoDuro [2][0])+Integer.parseInt(aPantalla [2][0])+Integer.parseInt(aFuentePoder [2][0])+Integer.parseInt(aGabinete [2][0])+Integer.parseInt(aCooler [2][0]);
+            int total=Integer.parseInt(aMouse[2][2])+Integer.parseInt(aTeclado[2][0])+Integer.parseInt(aRam [2][0])+Integer.parseInt(aPrecesador [2][0])+Integer.parseInt(aboard [2][0])+Integer.parseInt(aGrafica [2][0])+Integer.parseInt(aDiscoDuro [2][0])+Integer.parseInt(aPantalla [2][0])+Integer.parseInt(aFuentePoder [2][0])+Integer.parseInt(aGabinete [2][0])+Integer.parseInt(aCooler [2][0]);
             out.println("<h1>El precio total del computador es: $ "+total+" </h1>");
             out.println("</body>");
             out.println("</html>");
